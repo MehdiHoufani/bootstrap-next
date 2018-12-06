@@ -8,3 +8,4 @@ package.json
 .idea/inspectionProfiles/
 .idea/modules.xml
 .idea/workspace.xml
+.next/
