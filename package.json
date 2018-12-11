@@ -1,0 +1,30 @@
+{
+  "name": "appbruno",
+  "version": "1.0.0",
+  "description": "site vitrine",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "cross-env NODE_ENV=development && node server/main.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "mehdi houfani",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "cross-env": "^5.2.0",
+    "eslint-loader": "^2.1.1",
+    "next": "^7.0.2",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
