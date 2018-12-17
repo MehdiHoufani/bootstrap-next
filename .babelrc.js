@@ -1,6 +1,6 @@
-{
-  "presets": ["@babel/preset-react"],
-  "plugins": [
-    ["@babel/plugin-proposal-class-properties", { "loose": true }]
-  ]
-}
+module.exports = {
+	'presets': ['@babel/preset-react'],
+	'plugins': [
+		['@babel/plugin-proposal-class-properties', {'loose': true}]
+	]
+};

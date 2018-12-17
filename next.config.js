@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 module.exports = {
 	webpack: (config, {buildId, dev, isServer, defaultLoaders}) => {
-		// Perform customizations to webpack config
-		config.modules.rules.push(...[
+		config.module.rules.push(...[
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
@@ -16,6 +15,7 @@ module.exports = {
 		]);
 		return config;
 	},
+	useFileSystemPublicRoutes: false,
 	webpackDevMiddleware: config => {
 		// Perform customizations to webpack dev middleware config
 		// Important: return the modified config
