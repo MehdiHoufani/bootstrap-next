@@ -93,6 +93,168 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./app/components/richtext/index.js":
+/*!******************************************!*\
+  !*** ./app/components/richtext/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _renderNodesTree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderNodesTree */ "./app/components/richtext/renderNodesTree.js");
+
+
+
+class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    this.render = () => {
+      const {
+        value
+      } = this.props;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: 'richtext'
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNodesTree__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        nodes: value.nodes
+      }));
+    };
+
+    this.editor = null;
+  }
+
+  componentDidMount() {
+    this.editor = document.getElementById('richtext');
+    this.editor.addEventListener('mousedown', event => console.log(event.type, event));
+    this.editor.addEventListener('mouseenter', event => console.log(event.type, event));
+    this.editor.addEventListener('mouseleave', event => console.log(event.type, event));
+    this.editor.addEventListener('mouseout', event => console.log(event.type, event));
+    this.editor.addEventListener('mouseover', event => console.log(event.type, event));
+    this.editor.addEventListener('mouseup', event => console.log(event.type, event));
+    this.editor.addEventListener('selectstart', event => console.log(event.type, event));
+    document.addEventListener('selectionchange', event => {
+      console.log(event.type, event);
+      window.getSelection();
+    });
+  }
+
+}
+Index.propTypes = {
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+Index.defaultProps = {
+  value: {
+    id: 1,
+    nodes: [{
+      type: 'span',
+      blocks: [{
+        nodes: [{
+          type: 'p',
+          blocks: [{
+            value: 'je suis '
+          }, {
+            nodes: [{
+              type: 'strong',
+              blocks: [{
+                value: 'medmed'
+              }]
+            }]
+          }]
+        }]
+      }]
+    }, {
+      type: 'span',
+      blocks: [{
+        nodes: [{
+          type: 'p',
+          blocks: [{
+            value: 'je suis '
+          }, {
+            nodes: [{
+              type: 'strong',
+              blocks: [{
+                value: 'medmed sur la 2e'
+              }]
+            }]
+          }]
+        }]
+      }]
+    }]
+  }
+};
+
+/***/ }),
+
+/***/ "./app/components/richtext/renderNodesTree.js":
+/*!****************************************************!*\
+  !*** ./app/components/richtext/renderNodesTree.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class RenderNodesTree extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    this.renderMarks = nodes => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(node.type, {
+      key: node.id
+    }, node.blocks && node.blocks.map((block, id) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+      key: id
+    }, block.value, block.nodes && this.renderMarks(block.nodes)))));
+
+    this.render = () => this.renderMarks(this.props.nodes);
+  }
+
+}
+
+RenderNodesTree.propTypes = {
+  nodes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (RenderNodesTree);
+
+/***/ }),
+
+/***/ "./app/index.js":
+/*!**********************!*\
+  !*** ./app/index.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_richtext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/richtext */ "./app/components/richtext/index.js");
+
+
+
+class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_richtext__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -104,24 +266,20 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/MedProd/Documents/#programmes/AppBruno/pages/index.js";
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app */ "./app/index.js");
 
 
-var Index = function Index() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: this
-  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: this
-  }, "Hello word"));
-};
+
+class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    this.render = () => {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    };
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -136,6 +294,17 @@ var Index = function Index() {
 
 module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 

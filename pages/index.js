@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import App from "../app";
+import App from '../app';
 
 class Index extends Component {
-
+	
 	render = () => {
-		return(
+		return (
 			<div>
-				<App />
-			</div>);}}
+				<App/>
+			</div>);
+	};
+}
 
 export default Index;

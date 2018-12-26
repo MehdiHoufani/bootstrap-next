@@ -28,13 +28,11 @@ module.exports = {
 			'error',
 			'unix'
 		],
-		'quotes': [
-			'error',
-			'double'
-		],
+		'quotes': ['error', 'single', {'avoidEscape': true}],
 		'semi': [
 			'error',
 			'always'
-		]
+		],
+		"no-console": "off"
 	}
 };
