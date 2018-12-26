@@ -22,33 +22,79 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
+    this.handleSelectionChange = () => {
+      const selection = window.getSelection();
+      console.log('selection', selection);
+
+      if (selection.type === 'Range') {
+        // range is selection of min 1 caractere and Caret is 0 caractere
+        console.log('selection in', selection.anchorNode);
+        console.log('selection info', selection.anchorOffset);
+      }
+
+      console.log('range', selection.getRangeAt(0)); // get the first selection of user not multi selection with ctrl key
+
+      this.setState(() => ({
+        selection
+      }));
+    };
+
+    this.handleFocus = () => console.log('focus', event);
+
+    this.handleBeforeInput = event => {
+      console.log('event', event.data);
+      event.preventDefault();
+    };
+
+    this.handleKey = event => console.log('key', event);
+
+    this.handleSelect = () => {
+      console.log('select', event);
+      console.log('select', event.value);
+    };
+
     this.render = () => {
       const {
         value
       } = this.props;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: 'richtext'
+        id: 'richtext',
+        contentEditable: true
+        /*	onBeforeInput={this.handleBeforeInput}
+        onKeyDown={this.handleKey}
+        onFocus={this.handleFocus}
+        onSelect={this.handleSelect}*/
+        ,
+        style: {
+          height: '200px',
+          width: '600px',
+          backgroundColor: 'grey'
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNodesTree__WEBPACK_IMPORTED_MODULE_2__["default"], {
         nodes: value.nodes
       }));
     };
 
     this.editor = null;
+    this.selection = null;
   }
 
   componentDidMount() {
     this.editor = document.getElementById('richtext');
-    this.editor.addEventListener('mousedown', event => console.log(event.type, event));
+    /*this.editor.addEventListener('mousedown', event => console.log(event.type, event));
     this.editor.addEventListener('mouseenter', event => console.log(event.type, event));
     this.editor.addEventListener('mouseleave', event => console.log(event.type, event));
     this.editor.addEventListener('mouseout', event => console.log(event.type, event));
     this.editor.addEventListener('mouseover', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseup', event => console.log(event.type, event));
-    this.editor.addEventListener('selectstart', event => console.log(event.type, event));
-    document.addEventListener('selectionchange', event => {
-      console.log(event.type, event);
-      window.getSelection();
-    });
+    this.editor.addEventListener('mouseup', event => console.log(event.type, event));*/
+    // this.editor.addEventListener('selectstart',
+    // 	event => console.log(event.type, event));
+
+    document.addEventListener('selectionchange', this.handleSelectionChange);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('selectionchange', this.handleSelectionChange);
   }
 
 }
@@ -59,31 +105,39 @@ Index.defaultProps = {
   value: {
     id: 1,
     nodes: [{
+      id: '1',
       type: 'span',
       blocks: [{
         nodes: [{
+          id: '2',
           type: 'p',
           blocks: [{
             value: 'je suis '
           }, {
             nodes: [{
+              id: '3',
               type: 'strong',
               blocks: [{
-                value: 'medmed'
+                value: 'medmed '
               }]
             }]
+          }, {
+            value: 'je suis derriere'
           }]
         }]
       }]
     }, {
+      id: '5',
       type: 'span',
       blocks: [{
         nodes: [{
+          id: '6',
           type: 'p',
           blocks: [{
             value: 'je suis '
           }, {
             nodes: [{
+              id: '7',
               type: 'strong',
               blocks: [{
                 value: 'medmed sur la 2e'
@@ -95,6 +149,42 @@ Index.defaultProps = {
     }]
   }
 };
+
+/***/ }),
+
+/***/ "./app/components/richtext/renderNode.js":
+/*!***********************************************!*\
+  !*** ./app/components/richtext/renderNode.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const RenderNode = ({
+  id,
+  Type,
+  children
+}) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, {
+  "data-key": `node-${id}`
+}, children);
+
+RenderNode.propTypes = {
+  id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  Type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any
+};
+RenderNode.defaultProps = {
+  children: null
+};
+/* harmony default export */ __webpack_exports__["default"] = (RenderNode);
 
 /***/ }),
 
@@ -111,6 +201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _renderNode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderNode */ "./app/components/richtext/renderNode.js");
+
 
 
 
@@ -118,8 +210,10 @@ class RenderNodesTree extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(...args) {
     super(...args);
 
-    this.renderMarks = nodes => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(node.type, {
-      key: node.id
+    this.renderMarks = nodes => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNode__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: node.id,
+      id: node.id,
+      Type: node.type
     }, node.blocks && node.blocks.map((block, id) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
       key: id
     }, block.value, block.nodes && this.renderMarks(block.nodes)))));
