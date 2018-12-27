@@ -108,6 +108,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _renderNodesTree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderNodesTree */ "./app/components/richtext/renderNodesTree.js");
+/* harmony import */ var _selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selector */ "./app/components/richtext/selector.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./app/components/richtext/utils.js");
+
+
 
 
 
@@ -117,29 +121,31 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     this.handleSelectionChange = () => {
       const selection = window.getSelection();
-      console.log('selection', selection);
-
-      if (selection.type === 'Range') {
-        // range is selection of min 1 caractere and Caret is 0 caractere
-        console.log('selection in', selection.anchorNode);
-        console.log('selection info', selection.anchorOffset);
-      }
-
-      console.log('range', selection.getRangeAt(0)); // get the first selection of user not multi selection with ctrl key
-
-      this.setState(() => ({
-        selection
-      }));
+      const {
+        startContainer,
+        startOffset,
+        endContainer,
+        endOffset
+      } = selection.getRangeAt(0);
+      this.selector = new _selector__WEBPACK_IMPORTED_MODULE_3__["default"]({
+        type: selection.type,
+        startContainer,
+        startOffset,
+        endContainer,
+        endOffset
+      });
     };
 
     this.handleFocus = () => console.log('focus', event);
 
     this.handleBeforeInput = event => {
-      console.log('event', event.data);
-      event.preventDefault();
+      console.log('event', event.type);
+      this.setState({
+        value: Object(_utils__WEBPACK_IMPORTED_MODULE_4__["default"])(this.state.value, this.selector.getStart())
+      });
     };
 
-    this.handleKey = event => console.log('key', event);
+    this.handleKey = event => console.log('key', event.keyCode);
 
     this.handleSelect = () => {
       console.log('select', event);
@@ -152,16 +158,15 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       } = this.props;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: 'richtext',
-        contentEditable: true
-        /*	onBeforeInput={this.handleBeforeInput}
-        onKeyDown={this.handleKey}
-        onFocus={this.handleFocus}
-        onSelect={this.handleSelect}*/
+        contentEditable: true,
+        onBeforeInput: this.handleBeforeInput,
+        onKeyDown: this.handleKey
+        /*	onFocus={this.handleFocus} */
         ,
         style: {
           height: '200px',
           width: '600px',
-          backgroundColor: 'grey'
+          backgroundColor: '#e6e5ea'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNodesTree__WEBPACK_IMPORTED_MODULE_2__["default"], {
         nodes: value.nodes
@@ -169,20 +174,14 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     };
 
     this.editor = null;
-    this.selection = null;
+    this.selector = null;
+    this.value = props.value || {};
+    this.state = {
+      value: props.value
+    };
   }
 
   componentDidMount() {
-    this.editor = document.getElementById('richtext');
-    /*this.editor.addEventListener('mousedown', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseenter', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseleave', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseout', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseover', event => console.log(event.type, event));
-    this.editor.addEventListener('mouseup', event => console.log(event.type, event));*/
-    // this.editor.addEventListener('selectstart',
-    // 	event => console.log(event.type, event));
-
     document.addEventListener('selectionchange', this.handleSelectionChange);
   }
 
@@ -299,27 +298,121 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class RenderNodesTree extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(...args) {
-    super(...args);
-
-    this.renderMarks = nodes => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNode__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      key: node.id,
-      id: node.id,
-      Type: node.type
-    }, node.blocks && node.blocks.map((block, id) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-      key: id
-    }, block.value, block.nodes && this.renderMarks(block.nodes)))));
-
-    this.render = () => this.renderMarks(this.props.nodes);
-  }
-
-}
+const RenderNodesTree = ({
+  nodes
+}) => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNode__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  key: node.id,
+  id: node.id,
+  Type: node.type
+}, node.blocks && node.blocks.map((block, id) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  key: id
+}, block.value, block.nodes && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RenderNodesTree, {
+  nodes: block.nodes
+})))));
 
 RenderNodesTree.propTypes = {
   nodes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (RenderNodesTree);
+
+/***/ }),
+
+/***/ "./app/components/richtext/selector.js":
+/*!*********************************************!*\
+  !*** ./app/components/richtext/selector.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class Selector {
+  constructor({
+    type,
+    startContainer,
+    startOffset,
+    endContainer,
+    endOffset
+  }) {
+    this.getStart = () => ({
+      key: this._startContainer.parentNode.dataset.key,
+      offset: this._startOffset
+    });
+
+    this.getEnd = () => ({
+      key: this._endContainer.parentNode.dataset.key,
+      offset: this._endOffset
+    });
+
+    this._type = type;
+    this._startContainer = startContainer;
+    this._startOffset = startOffset;
+    this._endContainer = endContainer;
+    this._endOffset = endOffset;
+  }
+
+  get startContainer() {
+    return this._startContainer;
+  }
+
+  get startOffset() {
+    return this._startOffset;
+  }
+
+  get endContainer() {
+    return this._endContainer;
+  }
+
+  get endOffset() {
+    return this._endOffset;
+  }
+
+  set startContainer(value) {
+    this._startContainer = value;
+  }
+
+  set startOffset(value) {
+    this._startOffset = value;
+  }
+
+  set endContainer(value) {
+    this._endContainer = value;
+  }
+
+  set endOffset(value) {
+    this._endOffset = value;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Selector);
+
+/***/ }),
+
+/***/ "./app/components/richtext/utils.js":
+/*!******************************************!*\
+  !*** ./app/components/richtext/utils.js ***!
+  \******************************************/
+/*! exports provided: delNodesRange */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "delNodesRange", function() { return delNodesRange; });
+const delNodesRange = (value, start) => {
+  let newValue = { ...value
+  };
+  newValue.nodes.forEach(node => {
+    if (node.id === start.key) {
+      node.blocks.forEach(block => {
+        if (block.value) {
+          block.value = block.value.substr(0, start.offset);
+        }
+      });
+    }
+  });
+  return newValue;
+};
 
 /***/ }),
 

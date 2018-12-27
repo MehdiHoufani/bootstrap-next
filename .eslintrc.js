@@ -28,12 +28,13 @@ module.exports = {
 			'error',
 			'unix'
 		],
-		'max-len': ["error", { "code": 80, "ignoreTrailingComments": true, "ignoreComments": true }],
+		'max-len': ["error", { "code": 120, "ignoreTrailingComments": true, "ignoreComments": true }],
 		'quotes': ['error', 'single', {'avoidEscape': true}],
 		'semi': [
 			'error',
 			'always'
 		],
+		'no-unused-vars': ["error", { "args" : "none" }],
 		"no-console": "off"
 	}
 };
