@@ -167,6 +167,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _renderNodesTree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderNodesTree */ "./app/components/richtext/renderNodesTree.js");
 /* harmony import */ var _selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selector */ "./app/components/richtext/selector.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./app/components/richtext/utils.js");
+/* harmony import */ var _value__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./value */ "./app/components/richtext/value.js");
+
 
 
 
@@ -252,61 +254,7 @@ Index.propTypes = {
   value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
 };
 Index.defaultProps = {
-  value: {
-    id: 1,
-    document: [{
-      id: '1',
-      type: 'span',
-      attr: {},
-      children: [{
-        id: '1.1',
-        type: 'p',
-        attr: {
-          className: 'test'
-        },
-        children: [{
-          id: '1.1.1',
-          type: 'text',
-          data: 'je suis '
-        }, {
-          id: '1.1.2',
-          type: 'strong',
-          attr: {},
-          children: [{
-            id: '1.1.2.1',
-            type: 'text',
-            data: 'medmed'
-          }]
-        }, {
-          id: '1.1.3',
-          type: 'text',
-          data: 'je suis derriere'
-        }]
-      }]
-    }, {
-      id: '2',
-      type: 'span',
-      children: [{
-        id: '2.1',
-        type: 'p',
-        attr: {},
-        children: [{
-          id: '2.1.1',
-          type: 'text',
-          data: 'je suis '
-        }, {
-          id: '2.1.2',
-          type: 'strong',
-          attr: {},
-          children: [{
-            id: '2.1.2.1',
-            type: 'text',
-            data: 'medmed sur la 2e'
-          }]
-        }]
-      }]
-    }]
-  }
+  value: _value__WEBPACK_IMPORTED_MODULE_5__["default"]
 };
 
 /***/ }),
@@ -333,8 +281,7 @@ const RenderNodesTree = ({
   nodes
 }) => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
   key: node.id
-}, node.type === 'text' && node.data, node.type !== 'text' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Node__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  key: node.id,
+}, node.type === 'text' ? node.data : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Node__WEBPACK_IMPORTED_MODULE_2__["default"], {
   id: node.id,
   Type: node.type,
   attributes: node.attr
@@ -445,6 +392,73 @@ const delNodesRange = (value, start) => {
   });
   return newValue;
 };
+
+/***/ }),
+
+/***/ "./app/components/richtext/value.js":
+/*!******************************************!*\
+  !*** ./app/components/richtext/value.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  id: 1,
+  document: [{
+    id: '1',
+    type: 'span',
+    attr: {},
+    children: [{
+      id: '1.1',
+      type: 'p',
+      attr: {
+        className: 'test'
+      },
+      children: [{
+        id: '1.1.1',
+        type: 'text',
+        data: 'je suis '
+      }, {
+        id: '1.1.2',
+        type: 'strong',
+        attr: {},
+        children: [{
+          id: '1.1.2.1',
+          type: 'text',
+          data: 'medmed'
+        }]
+      }, {
+        id: '1.1.3',
+        type: 'text',
+        data: ' je suis derriere'
+      }]
+    }]
+  }, {
+    id: '2',
+    type: 'span',
+    children: [{
+      id: '2.1',
+      type: 'p',
+      attr: {},
+      children: [{
+        id: '2.1.1',
+        type: 'text',
+        data: 'je suis '
+      }, {
+        id: '2.1.2',
+        type: 'strong',
+        attr: {},
+        children: [{
+          id: '2.1.2.1',
+          type: 'text',
+          data: 'medmed sur la 2e'
+        }]
+      }]
+    }]
+  }]
+});
 
 /***/ }),
 
