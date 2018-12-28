@@ -3,11 +3,11 @@ export default {
 	document: [
 		{
 			id: '1',
-			type: 'span',
+			type: 'p',
 			attr: {},
 			children: [{
 				id: '1.1',
-				type: 'p',
+				type: 'span',
 				attr: {className: 'test'},
 				children: [
 					{
@@ -38,10 +38,10 @@ export default {
 		},
 		{
 			id: '2',
-			type: 'span',
+			type: 'p',
 			children: [{
 				id: '2.1',
-				type: 'p',
+				type: 'span',
 				attr: {},
 				children: [
 					{

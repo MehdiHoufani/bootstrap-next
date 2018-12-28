@@ -187,6 +187,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         endContainer,
         endOffset
       } = selection.getRangeAt(0);
+      console.log('selection', selection);
       this.selector = new _selector__WEBPACK_IMPORTED_MODULE_3__["default"]({
         type: selection.type,
         startContainer,
@@ -200,28 +201,24 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     this.handleBeforeInput = event => {
       console.log('event', event.type);
-      this.setState({
-        value: Object(_utils__WEBPACK_IMPORTED_MODULE_4__["default"])(this.state.value, this.selector.getStart())
-      });
     };
 
-    this.handleKey = event => console.log('key', event.keyCode);
-
-    this.handleSelect = () => {
-      console.log('select', event);
-      console.log('select', event.value);
+    this.handleKey = event => {
+      console.log('key', event.key);
+      event.preventDefault();
+      Object(_utils__WEBPACK_IMPORTED_MODULE_4__["delNodesRange"])(this.state.value, this.selector.getStart());
     };
 
     this.render = () => {
       const {
         value
-      } = this.props;
+      } = this.state;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: 'richtext',
-        contentEditable: true,
-        onBeforeInput: this.handleBeforeInput,
-        onKeyDown: this.handleKey
-        /*	onFocus={this.handleFocus} */
+        contentEditable: true
+        /* onBeforeInput={this.handleBeforeInput} */
+        ,
+        onKeyDown: this.handleKey // onFocus={this.handleFocus}
         ,
         style: {
           height: '200px',
@@ -372,25 +369,26 @@ class Selector {
 /*!******************************************!*\
   !*** ./app/components/richtext/utils.js ***!
   \******************************************/
-/*! exports provided: delNodesRange */
+/*! exports provided: findParentNode, findNode, delNodesRange */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findParentNode", function() { return findParentNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findNode", function() { return findNode; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "delNodesRange", function() { return delNodesRange; });
+const findParentNode = (nodes, dataKey, idx = 0) => {
+  if (idx < dataKey.length - 1) return findParentNode(nodes[dataKey[idx] - 1].children, dataKey, idx + 1);
+  return nodes[dataKey[idx] - 1];
+};
+const findNode = (nodes, dataKey, idx = 0) => {
+  if (idx < dataKey.length - 1) return findParentNode(nodes[dataKey[idx] - 1].children, dataKey, idx + 1);
+  return nodes[dataKey[idx] - 1];
+};
 const delNodesRange = (value, start) => {
-  let newValue = { ...value
-  };
-  newValue.nodes.forEach(node => {
-    if (node.id === start.key) {
-      node.blocks.forEach(block => {
-        if (block.value) {
-          block.value = block.value.substr(0, start.offset);
-        }
-      });
-    }
-  });
-  return newValue;
+  const keyIn = start.key.split('.');
+  console.log('key', keyIn);
+  console.log('delNodeRange', findNode(value.document, keyIn));
 };
 
 /***/ }),
@@ -408,11 +406,11 @@ __webpack_require__.r(__webpack_exports__);
   id: 1,
   document: [{
     id: '1',
-    type: 'span',
+    type: 'p',
     attr: {},
     children: [{
       id: '1.1',
-      type: 'p',
+      type: 'span',
       attr: {
         className: 'test'
       },
@@ -437,10 +435,10 @@ __webpack_require__.r(__webpack_exports__);
     }]
   }, {
     id: '2',
-    type: 'span',
+    type: 'p',
     children: [{
       id: '2.1',
-      type: 'p',
+      type: 'span',
       attr: {},
       children: [{
         id: '2.1.1',

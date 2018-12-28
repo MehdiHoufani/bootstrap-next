@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import RenderNodesTree from './renderNodesTree';
 import Selector from './selector';
-import delNodesRange from './utils';
+import { delNodesRange } from './utils';
 import value from './value';
 
 export default class Index extends Component {
@@ -38,40 +38,35 @@ export default class Index extends Component {
 			endContainer,
 			endOffset
 		} = selection.getRangeAt(0);
+		console.log('selection', selection);
 
 		this.selector = new Selector({
 			type: selection.type,
 			startContainer, startOffset, endContainer, endOffset
 		});
-		
 	};
 
 	handleFocus = () => console.log('focus', event);
 
 	handleBeforeInput = event => {
 		console.log('event', event.type);
-
-		this.setState({
-			value: delNodesRange(this.state.value, this.selector.getStart())
-		});
 		
 	};
 
-	handleKey = event => console.log('key', event.keyCode);
-
-	handleSelect = () => {
-		console.log('select', event);
-		console.log('select', event.value);
+	handleKey = event => {
+		console.log('key', event.key);
+		event.preventDefault();
+		delNodesRange(this.state.value, this.selector.getStart());
 	};
 
 	render = () => {
-		const { value } = this.props;
+		const { value } = this.state;
 		return (
 			<div id={'richtext'}
 				contentEditable
-				onBeforeInput={this.handleBeforeInput}
+				/* onBeforeInput={this.handleBeforeInput} */
 				onKeyDown={this.handleKey}
-				/*	onFocus={this.handleFocus} */
+				// onFocus={this.handleFocus}
 				style={{
 					height: '200px',
 					width: '600px',
