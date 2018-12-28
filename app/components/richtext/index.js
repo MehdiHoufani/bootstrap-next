@@ -28,6 +28,8 @@ export default class Index extends Component {
 	}
 
 	handleSelectionChange = () => {
+
+		// todo: check the selection if on focus
 		const selection = window.getSelection();
 		const {
 			startContainer,
@@ -47,7 +49,6 @@ export default class Index extends Component {
 
 	handleBeforeInput = event => {
 		console.log('event', event.type);
-
 
 		this.setState({
 			value: delNodesRange(this.state.value, this.selector.getStart())
@@ -75,7 +76,7 @@ export default class Index extends Component {
 					width: '600px',
 					backgroundColor: '#e6e5ea'
 				}}>
-				<RenderNodesTree nodes={value.nodes}/>
+				<RenderNodesTree nodes={value.document}/>
 			</div>);
 
 	}
@@ -88,65 +89,71 @@ Index.propTypes = {
 Index.defaultProps = {
 	value: {
 		id: 1,
-		nodes: [
+		document: [
 			{
 				id: '1',
 				type: 'span',
-				blocks: [{
-					nodes: [{
-						id: '2',
-						type: 'p',
-						blocks: [
-							{
-								value: 'je suis '
-							},
-							{
-								nodes: [
-									{
-										id: '3',
-										type: 'strong',
-										blocks: [{
-											value: 'medmed '
-										}]
-									}
-								]
-							},
-							{
-								value: 'je suis derriere'
-							}
-						]
-					}]
+				attr: {},
+				children: [{
+					id: '1.1',
+					type: 'p',
+					attr: { className: 'test'},
+					children: [
+						{
+							id: '1.1.1',
+							type: 'text',
+							data: 'je suis '
+						},
+						{
+							id: '1.1.2',
+							type: 'strong',
+							attr: {},
+							children: [
+								{
+									id: '1.1.2.1',
+									type: 'text',
+									data: 'medmed'
+								}
+							]
+						},
+						{
+							id: '1.1.3',
+							type: 'text',
+							data: 'je suis derriere'
+						}
+					]
+				}]
 
-				}
-				]
 			},
 			{
-				id: '5',
+				id: '2',
 				type: 'span',
-				blocks: [{
-					nodes: [{
-						id: '6',
-						type: 'p',
-						blocks: [
-							{
-								value: 'je suis '
-							},
-							{
-								nodes: [
-									{
-										id: '7',
-										type: 'strong',
-										blocks: [{
-											value: 'medmed sur la 2e'
-										}]
-									}
-								]
-							}
-						]
-					}]
+				children: [{
+					id: '2.1',
+					type: 'p',
+					attr: {},
+					children: [
+						{
+							id: '2.1.1',
+							type: 'text',
+							data: 'je suis '
+						},
+						{
 
-				}
-				]
+							id: '2.1.2',
+							type: 'strong',
+							attr: {},
+							children: [{
+								id: '2.1.2.1',
+								type: 'text',
+								data: 'medmed sur la 2e'
+							}]
+
+
+						}
+					]
+				}]
+
 			}
 		]
 	}

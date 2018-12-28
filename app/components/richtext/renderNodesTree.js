@@ -1,18 +1,17 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import RenderNode from './renderNode';
+import Node from './Node';
 
-const RenderNodesTree = ({ nodes }) =>
+const RenderNodesTree = ({nodes}) =>
 	nodes.map(node => (
-		<RenderNode key={node.id} id={node.id} Type={node.type}>
-			{node.blocks && node.blocks.map((block, id) => (
-				<Fragment key={id}>
-					{block.value}
-					{block.nodes && <RenderNodesTree nodes={block.nodes} />}
-				</Fragment>))}
-		</RenderNode>));
-
+		<Fragment key={node.id}>
+			{ node.type === 'text' && node.data }
+			{node.type !== 'text' &&
+				<Node key={node.id} id={node.id} Type={node.type} attributes={node.attr}>
+					{node.children && <RenderNodesTree nodes={node.children}/>}
+				</Node>}
+		</Fragment>));
 
 
 RenderNodesTree.propTypes = {

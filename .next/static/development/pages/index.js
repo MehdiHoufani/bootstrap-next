@@ -1,5 +1,62 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./app/components/richtext/Node.js":
+/*!*****************************************!*\
+  !*** ./app/components/richtext/Node.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+
+
+
+const Node = ({
+  id,
+  Type,
+  children,
+  attributes
+}) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, _extends({
+  "data-key": id
+}, attributes), children);
+
+Node.propTypes = {
+  id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  Type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
+  attributes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+Node.defaultProps = {
+  children: null,
+  attributes: {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (Node);
+
+/***/ }),
+
 /***/ "./app/components/richtext/index.js":
 /*!******************************************!*\
   !*** ./app/components/richtext/index.js ***!
@@ -27,6 +84,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(props);
 
     this.handleSelectionChange = () => {
+      // todo: check the selection if on focus
       const selection = window.getSelection();
       const {
         startContainer,
@@ -76,7 +134,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           backgroundColor: '#e6e5ea'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNodesTree__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        nodes: value.nodes
+        nodes: value.document
       }));
     };
 
@@ -103,87 +161,60 @@ Index.propTypes = {
 Index.defaultProps = {
   value: {
     id: 1,
-    nodes: [{
+    document: [{
       id: '1',
       type: 'span',
-      blocks: [{
-        nodes: [{
-          id: '2',
-          type: 'p',
-          blocks: [{
-            value: 'je suis '
-          }, {
-            nodes: [{
-              id: '3',
-              type: 'strong',
-              blocks: [{
-                value: 'medmed '
-              }]
-            }]
-          }, {
-            value: 'je suis derriere'
+      attr: {},
+      children: [{
+        id: '1.1',
+        type: 'p',
+        attr: {
+          className: 'test'
+        },
+        children: [{
+          id: '1.1.1',
+          type: 'text',
+          data: 'je suis '
+        }, {
+          id: '1.1.2',
+          type: 'strong',
+          attr: {},
+          children: [{
+            id: '1.1.2.1',
+            type: 'text',
+            data: 'medmed'
           }]
+        }, {
+          id: '1.1.3',
+          type: 'text',
+          data: 'je suis derriere'
         }]
       }]
     }, {
-      id: '5',
+      id: '2',
       type: 'span',
-      blocks: [{
-        nodes: [{
-          id: '6',
-          type: 'p',
-          blocks: [{
-            value: 'je suis '
-          }, {
-            nodes: [{
-              id: '7',
-              type: 'strong',
-              blocks: [{
-                value: 'medmed sur la 2e'
-              }]
-            }]
+      children: [{
+        id: '2.1',
+        type: 'p',
+        attr: {},
+        children: [{
+          id: '2.1.1',
+          type: 'text',
+          data: 'je suis '
+        }, {
+          id: '2.1.2',
+          type: 'strong',
+          attr: {},
+          children: [{
+            id: '2.1.2.1',
+            type: 'text',
+            data: 'medmed sur la 2e'
           }]
         }]
       }]
     }]
   }
 };
-
-/***/ }),
-
-/***/ "./app/components/richtext/renderNode.js":
-/*!***********************************************!*\
-  !*** ./app/components/richtext/renderNode.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-const RenderNode = ({
-  id,
-  Type,
-  children
-}) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, {
-  "data-key": `node-${id}`
-}, children);
-
-RenderNode.propTypes = {
-  id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  Type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any
-};
-RenderNode.defaultProps = {
-  children: null
-};
-/* harmony default export */ __webpack_exports__["default"] = (RenderNode);
 
 /***/ }),
 
@@ -200,22 +231,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _renderNode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderNode */ "./app/components/richtext/renderNode.js");
+/* harmony import */ var _Node__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Node */ "./app/components/richtext/Node.js");
 
 
 
 
 const RenderNodesTree = ({
   nodes
-}) => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_renderNode__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}) => nodes.map(node => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  key: node.id
+}, node.type === 'text' && node.data, node.type !== 'text' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Node__WEBPACK_IMPORTED_MODULE_2__["default"], {
   key: node.id,
   id: node.id,
-  Type: node.type
-}, node.blocks && node.blocks.map((block, id) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-  key: id
-}, block.value, block.nodes && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RenderNodesTree, {
-  nodes: block.nodes
-})))));
+  Type: node.type,
+  attributes: node.attr
+}, node.children && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RenderNodesTree, {
+  nodes: node.children
+}))));
 
 RenderNodesTree.propTypes = {
   nodes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
