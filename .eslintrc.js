@@ -11,11 +11,11 @@ module.exports = {
 		}
 	},
 	env: {
-        "node": true,
-        "browser": true,
-        "es6": true
-    },
-	extends: ["eslint:recommended", "plugin:react/recommended"],
+		"node": true,
+		"browser": true,
+		"es6": true
+	},
+	extends: ["plugin:react/recommended"],
 	rules: {
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
@@ -28,13 +28,12 @@ module.exports = {
 			'error',
 			'unix'
 		],
-		'quotes': [
-			'error',
-			'double'
-		],
+		'max-len': ["error", { "code": 120, "ignoreTrailingComments": true, "ignoreComments": true }],
+		'quotes': ['error', 'single', {'avoidEscape': true}],
 		'semi': [
 			'error',
 			'always'
-		]
+		],
+		"no-console": "off"
 	}
 };
