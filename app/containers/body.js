@@ -11,3 +11,5 @@ Body.propTypes = {
 Body.defaultProps = {
 	children: null
 };
+
+export default Body;

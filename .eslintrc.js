@@ -28,7 +28,7 @@ module.exports = {
 			'error',
 			'unix'
 		],
-		'max-len': ["error", { "code": 120, "ignoreTrailingComments": true, "ignoreComments": true }],
+		'max-len': ["error", { "code": 100, "ignoreTrailingComments": true, "ignoreComments": true }],
 		'quotes': ['error', 'single', {'avoidEscape': true}],
 		'semi': [
 			'error',
