@@ -3,6 +3,7 @@ import './index.scss';
 
 import Header from './containers/header';
 import Body from './containers/body';
+import BlockSlider from './components/blockSlider';
 
 class App extends Component {
 	render() {
@@ -20,26 +21,9 @@ class App extends Component {
 				</Header>
 				<Body>
 					<div className={'section-slide'}>
-						<div className={'block-slide'}>
-							<div className={'block-slide-header'}>
-								<h3>SOLUTIONS</h3>
-								<h3>COLLECTIVES</h3>
-							</div>
-						</div>
-						<div className={'block-slide'}>
-							<div className={'block-slide-header'}>
-								<div className={'block-slide-header-title'}>
-									<h3>SOLUTIONS</h3>
-									<h3>PROMOTEURS</h3>
-								</div>
-							</div>
-						</div>
-						<div className={'block-slide'}>
-							<div className={'block-slide-header'}>
-								<h3>NOTRE</h3>
-								<h3>GAMME</h3>
-							</div>
-						</div>
+						<BlockSlider text={['SOLUTIONS', 'COLLECTIVES']}/>
+						<BlockSlider text={['SOLUTIONS', 'PROMOTEURS']}/>
+						<BlockSlider text={['NOTRE', 'GAMME']}/>
 					</div>
 				</Body>
 			</div>
