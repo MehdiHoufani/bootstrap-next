@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Body = ({ children }) =>
-	<div className={'body'}>{children}</div>;
+const Body = ({ children }) => <div className={"body"}>{children}</div>;
 
 Body.propTypes = {
-	children: PropTypes.element
+  children: PropTypes.array
 };
 
 Body.defaultProps = {
-	children: null
+  children: null
 };
 
 export default Body;

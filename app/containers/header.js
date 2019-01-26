@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Header = ({ children }) =>
-	<header className={'header'}>{children}</header>;
+const Header = ({ children }) => (
+  <header className={"header"}>{children}</header>
+);
 
 Header.propTypes = {
-	children: PropTypes.element
+  children: PropTypes.array
 };
 
 Header.defaultProps = {
-	children: null
+  children: null
 };
 
 export default Header;
-
