@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Slider from "react-slick";
+import Slide from "./slide";
 
 class BlockSlider extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class BlockSlider extends Component {
   }
 
   render = () => {
-    const { text, classNames } = this.props;
+    const { text, classNames, slides } = this.props;
     return (
       <div className={`block-slider ${classNames}`}>
         <div className={"block-slider-header"}>
@@ -23,21 +24,9 @@ class BlockSlider extends Component {
         </div>
         <div className={"block-slider-body"}>
           <Slider {...this.props.settings}>
-            <div>
-              <div className={"block-slider-picture"}>
-                <img src={"https://via.placeholder.com/150x150"} />
-              </div>
-            </div>
-            <div>
-              <div className={"block-slider-picture"}>
-                <img src={"https://via.placeholder.com/150x150"} />
-              </div>
-            </div>
-            <div>
-              <div className={"block-slider-picture"}>
-                <img src={"https://via.placeholder.com/150x150"} />
-              </div>
-            </div>
+            {slides.map((slide, idx) => (
+              <Slide key={idx.toString()} {...slide} />
+            ))}
           </Slider>
         </div>
       </div>
@@ -47,12 +36,14 @@ class BlockSlider extends Component {
 
 BlockSlider.propTypes = {
   text: PropTypes.array,
+  slides: PropTypes.array,
   settings: PropTypes.object,
   classNames: PropTypes.string
 };
 
 BlockSlider.defaultProps = {
   text: [],
+  slides: [],
   settings: {
     dots: false,
     infinite: true,

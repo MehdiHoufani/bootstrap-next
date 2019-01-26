@@ -7,6 +7,7 @@ import BlockSlider from "./components/blockSlider/blockSlider";
 
 class App extends Component {
   render() {
+    const picture = { url: "", alt: "" };
     return (
       <div className={"site"}>
         <Header>
@@ -21,12 +22,19 @@ class App extends Component {
         </Header>
         <Body>
           <div className={"section-sliders"}>
-            <BlockSlider text={["SOLUTIONS", "COLLECTIVES"]} />
+            <BlockSlider
+              text={["SOLUTIONS", "COLLECTIVES"]}
+              slides={[picture, picture, picture]}
+            />
             <BlockSlider
               text={["SOLUTIONS", "PROMOTEURS"]}
               classNames={"block-slider-center"}
+              slides={[picture, picture, picture]}
             />
-            <BlockSlider text={["NOTRE", "GAMME"]} />
+            <BlockSlider
+              text={["NOTRE", "GAMME"]}
+              slides={[picture, picture, picture]}
+            />
           </div>
         </Body>
       </div>
