@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./index.scss";
+import { TabsContainer, Tabs, Tab } from 'react-md';
 
 import Header from "./containers/header";
 import Body from "./containers/body";
 import BlockSlider from "./components/blockSlider/blockSlider";
+import ContactButton from "./components/contactButton/index";
 
 class App extends Component {
   render() {
-    const picture = { url: "", alt: "" };
     return (
       <div className={"site"}>
         <Header>
@@ -24,16 +25,19 @@ class App extends Component {
           <div className={"section-sliders"}>
             <BlockSlider
               text={["SOLUTIONS", "COLLECTIVES"]}
-              slides={[picture, picture, picture]}
+              slides={[{}, {}, {}]}
+              autoplay
             />
             <BlockSlider
               text={["SOLUTIONS", "PROMOTEURS"]}
               classNames={"block-slider-center"}
-              slides={[picture, picture, picture]}
+              slides={[{}, {}, {}]}
+              autoplay
             />
             <BlockSlider
               text={["NOTRE", "GAMME"]}
-              slides={[picture, picture, picture]}
+              slides={[{}, {}, {}]}
+              autoplay
             />
           </div>
         </Body>

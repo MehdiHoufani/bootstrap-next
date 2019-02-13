@@ -13,7 +13,7 @@ class BlockSlider extends Component {
   }
 
   render = () => {
-    const { text, classNames, slides } = this.props;
+    const { text, classNames, slides, settings, ...rest } = this.props;
     return (
       <div className={`block-slider ${classNames}`}>
         <div className={"block-slider-header"}>
@@ -23,7 +23,7 @@ class BlockSlider extends Component {
           </div>
         </div>
         <div className={"block-slider-body"}>
-          <Slider {...this.props.settings}>
+          <Slider {...settings} {...rest}>
             {slides.map((slide, idx) => (
               <Slide key={idx.toString()} {...slide} />
             ))}

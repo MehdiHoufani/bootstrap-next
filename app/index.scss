@@ -1,10 +1,11 @@
+@import "~react-md/src/scss/_react-md.scss";
 @import "./components/index.scss";
 
 .site {
   font-family: Arial, serif;
   .text {
     display: inline;
-    color: #ff683d;
+    color: #ef7c3c;
     h2 {
       font-size: 1.7em;
     }

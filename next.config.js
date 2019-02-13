@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 const withSass = require("@zeit/next-sass");
+const path = require("path");
 
 module.exports = withSass({
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
@@ -16,6 +17,10 @@ module.exports = withSass({
           test: /\.js$/,
           exclude: /node_modules/,
           use: ["babel-loader", "eslint-loader"]
+        },
+        {
+          test: /\.svg$/,
+          loader: "svg-inline-loader"
         }
       ]
     );
