@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { Grid, Cell } from "react-md";
+
 import Slider from "react-slick";
 import Slide from "./slide";
 
@@ -12,26 +14,26 @@ class BlockSlider extends Component {
     };
   }
 
-  render = () => {
-    const { text, classNames, slides, settings, ...rest } = this.props;
+  render() {
+    const { text, classNames, slides, settings } = this.props;
     return (
-      <div className={`block-slider ${classNames}`}>
-        <div className={"block-slider-header"}>
+      <Grid className={`block-slider ${classNames}`}>
+        <Cell size={12} className={"block-slider-header"}>
           <div className={"block-slider-header-title"}>
             <h3>{text[0] || ""}</h3>
             <h3>{text[1] || ""}</h3>
           </div>
-        </div>
-        <div className={"block-slider-body"}>
-          <Slider {...settings} {...rest}>
+        </Cell>
+        <Cell size={12} className={"block-slider-body"}>
+          <Slider {...settings}>
             {slides.map((slide, idx) => (
               <Slide key={idx.toString()} {...slide} />
             ))}
           </Slider>
-        </div>
-      </div>
+        </Cell>
+      </Grid>
     );
-  };
+  }
 }
 
 BlockSlider.propTypes = {

@@ -1,46 +1,36 @@
 import React, { Component } from "react";
-import "./index.scss";
-import { TabsContainer, Tabs, Tab } from 'react-md';
+import { TabsContainer, Tabs, Tab, Cell, Grid } from "react-md";
 
-import Header from "./containers/header";
-import Body from "./containers/body";
-import BlockSlider from "./components/blockSlider/blockSlider";
-import ContactButton from "./components/contactButton/index";
+import "./index.scss";
+
+import Header from "./components/header";
+
+import Collectives from "./pages/collectives";
+import Home from "./pages/home/index";
 
 class App extends Component {
   render() {
     return (
-      <div className={"site"}>
-        <Header>
-          <div className={"header-left"}>
-            <img src="./static/Logo_Arrow.svg" alt="" className={"logo"} />
-          </div>
-          <div className={"header-center"}>
-            <div className={"text header-title"}>
-              <h2>Mobilier et signaletique en zone Urbaine</h2>
-            </div>
-          </div>
-        </Header>
-        <Body>
-          <div className={"section-sliders"}>
-            <BlockSlider
-              text={["SOLUTIONS", "COLLECTIVES"]}
-              slides={[{}, {}, {}]}
-              autoplay
-            />
-            <BlockSlider
-              text={["SOLUTIONS", "PROMOTEURS"]}
-              classNames={"block-slider-center"}
-              slides={[{}, {}, {}]}
-              autoplay
-            />
-            <BlockSlider
-              text={["NOTRE", "GAMME"]}
-              slides={[{}, {}, {}]}
-              autoplay
-            />
-          </div>
-        </Body>
+      <div>
+        <TabsContainer
+          toolbar={<Header />}
+          colored
+          panelClassName="md-grid"
+          defaultTabIndex={1}
+        >
+          <Tabs tabId="simple-tab" mobile={false} centered>
+            <Tab label="Home" />
+            <Tab label="Solutions collectives">
+              <Collectives />
+            </Tab>
+            <Tab label="Solutions promoteur">
+              <h3>Now look at me!</h3>
+            </Tab>
+            <Tab label="Notre gamme">
+              <h3>Now look at me!</h3>
+            </Tab>
+          </Tabs>
+        </TabsContainer>
       </div>
     );
   }

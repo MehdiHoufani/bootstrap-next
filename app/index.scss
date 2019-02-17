@@ -1,6 +1,15 @@
 @import "~react-md/src/scss/_react-md.scss";
 @import "./components/index.scss";
 
+$md-primary-color: $md-orange-800;
+$md-secondary-color: $md-deep-orange-a-200;
+
+@include react-md-everything;
+
+.md-tab--active {
+  background-color: $md-orange-400;
+}
+
 .site {
   font-family: Arial, serif;
   .text {
@@ -13,7 +22,7 @@
 
 
   .header {
-    height: 200px;
+    height: 100px;
     width: 100%;
 
     .header-left {
