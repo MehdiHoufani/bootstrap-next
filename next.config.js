@@ -19,8 +19,13 @@ module.exports = withSass({
           use: ["babel-loader", "eslint-loader"]
         },
         {
-          test: /\.svg$/,
-          loader: "svg-inline-loader"
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {}
+            }
+          ]
         }
       ]
     );

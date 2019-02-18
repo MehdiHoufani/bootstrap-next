@@ -270,7 +270,6 @@ class ContactButton extends React.Component {
                 >
                   <Button
                     floating
-                    secondary
                     iconClassName={"fa fa-" + childButtonIcons[index]}
                   />
                 </div>

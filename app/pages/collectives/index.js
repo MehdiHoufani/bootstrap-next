@@ -19,10 +19,7 @@ const Collectives = () => (
     </Grid>
     <Grid>
       <List className="md-cell md-cell--12">
-        <Subheader
-          secondary
-          primaryText="ARROW, c'est une prise en charge intégrale:"
-        />
+        <Subheader primaryText="ARROW, c'est une prise en charge intégrale:" />
         <Divider />
         <ListItem
           primaryText={`D'un projet de convention comprenant une séléction
@@ -46,12 +43,25 @@ const Collectives = () => (
         />
       </List>
     </Grid>
-    <h3>{`Notre concept est gratuit pour la commune et autofinancé par les
+    <Grid>
+      <Cell size={6}>
+        <h3
+          style={{ whiteSpace: "normal" }}
+        >{`Notre concept est gratuit pour la commune et autofinancé par les
               acteurs économiques.`}</h3>
-    <h3>{`Nous étudions vos projets pour vous présenter la solution sur-mesure
+        <h3
+          style={{ whiteSpace: "normal" }}
+        >{`Nous étudions vos projets pour vous présenter la solution sur-mesure
                    des besoins de votre commune.`}</h3>
-
-    <img src={"./static/conceptCollectivité1.jpeg"} alt={""} />
+      </Cell>
+      <Cell size={6}>
+        <img
+          src={"./static/conceptCollectivité1.jpg"}
+          alt={""}
+          style={{ width: "100%" }}
+        />
+      </Cell>
+    </Grid>
   </Cell>
 );
 
