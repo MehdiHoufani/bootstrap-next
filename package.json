@@ -8,10 +8,11 @@
     "url": "https://github.com/MehdiHoufani/bootstrap-next.git"
   },
   "scripts": {
+    "prestart": "next build",
     "test": "test",
     "dev": "cross-env NODE_ENV=development && node server/main.js",
     "build": "next build",
-    "start": "next build && cross-env NODE_ENV=production && node server/main.js"
+    "start": "node server/main.js"
   },
   "author": "mehdi houfani",
   "license": "ISC",
