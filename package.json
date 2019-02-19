@@ -2,7 +2,7 @@
   "name": "website-arrow",
   "version": "1.0.0",
   "description": "site vitrine",
-  "main": "index.js",
+  "main": "server/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/MehdiHoufani/bootstrap-next.git"
