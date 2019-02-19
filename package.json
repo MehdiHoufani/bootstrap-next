@@ -12,7 +12,7 @@
     "test": "test",
     "dev": "cross-env NODE_ENV=development && node server/main.js",
     "build": "next build",
-    "start": "node server/main.js"
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server/main.js"
   },
   "author": "mehdi houfani",
   "license": "ISC",
