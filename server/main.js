@@ -10,8 +10,10 @@ const app = next({ dev });
 app.prepare().then(() => {
   createServer((req, res) => {
     app.render(req, res, "/index");
-  }).listen(3000, err => {
+  }).listen(port, err => {
     if (err) throw err;
-    console.log(`start env: ${dev} > Ready on port: ${port}`);
+    console.log(
+      `App started env: ${process.env.NODE_ENV} > Ready on port: ${port}`
+    );
   });
 });
