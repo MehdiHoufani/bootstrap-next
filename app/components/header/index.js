@@ -1,33 +1,22 @@
 import React, { Fragment } from "react";
 
-import { Grid, Cell, Toolbar } from "react-md";
+import { Grid, Cell } from "react-md";
 
 const Header = () => (
-  <div className={"header"}>
-    <Toolbar
-      prominent
-      nav={
-        <Grid>
-          <Cell size={12}>
-            <img
-              src="./static/Logo_Arrow.svg"
-              alt=""
-              style={{ height: "96px" }}
-            />
-          </Cell>
-        </Grid>
-      }
-      title={
-        <Grid>
-          <Cell size={12}>
-            <h1 className={"title"}>
-              {"Mobilier et signalétique en zone Urbaine"}
-            </h1>
-          </Cell>
-        </Grid>
-      }
-    />
-  </div>
+  <header>
+    <Grid className={"header"}>
+      <Cell size={3}>
+        <img src="/static/Logo_Arrow.svg" alt="" className={"header-logo"} />
+      </Cell>
+      <Cell size={8} desktopOffset={1}>
+        <div className={"header-title"}>
+          <div className={"header-title-container"}>
+            <h2>{"mobilier et signaletique en zone urbaine"}</h2>
+          </div>
+        </div>
+      </Cell>
+    </Grid>
+  </header>
 );
 
 export default Header;

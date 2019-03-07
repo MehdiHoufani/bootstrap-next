@@ -10,58 +10,14 @@ $md-secondary-color: $md-deep-orange-a-200;
   background-color: $md-orange-400;
 }
 
-.site {
-  font-family: Arial, serif;
-  .text {
-    display: inline;
-    color: #ef7c3c;
-    h2 {
-      font-size: 1.7em;
-    }
-  }
+@font-face {
+  font-family: "earthorbiter";
+  font-style: normal;
+  src: url("/static/fonts/earthorbiter/earthorbiter.ttf") format("truetype");
+}
 
-
-  .header {
-    height: 100px;
-    width: 100%;
-
-    .header-left {
-      display: inline-block;
-      height: 100%;
-      width: 25%;
-      vertical-align: top;
-    }
-
-    .header-center {
-      display: inline-block;
-      height: 100%;
-      width: 75%;
-      vertical-align: top;
-
-      .header-title {
-        position: relative;
-        height: 100%;
-        width: 100%;
-
-        h2 {
-          display: inline;
-          float: right;
-          padding-top: 30px;
-          padding-right: 40px;
-        }
-      }
-    }
-  }
-
-  .body {
-    padding: 10px;
-    .section-sliders {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 500px;
-      width: 100%;
-      margin: 0 auto;
-    }
-  }
+@font-face {
+  font-family: "earthorbiter";
+  font-weight: bold;
+  src: url("/static/fonts/earthorbiter/earthorbiterbold.ttf") format("truetype");
 }

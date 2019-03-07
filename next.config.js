@@ -19,13 +19,13 @@ module.exports = withSass({
           use: ["babel-loader", "eslint-loader"]
         },
         {
-          test: /\.(png|jpg|gif)$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {}
+          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+          use: {
+            loader: "url-loader",
+            options: {
+              limit: 100000
             }
-          ]
+          }
         }
       ]
     );

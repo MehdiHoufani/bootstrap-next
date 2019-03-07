@@ -1,17 +1,33 @@
 .header {
-  .md-toolbar--prominent {
-    height: 120px;
-    margin-bottom: 5px;
+  min-height: 180px;
+  .header-logo {
+    margin: 30px;
   }
-  .md-btn--toolbar {
-    margin-top: 0px;
+
+  .header-title {
+    padding-top: 70px;
   }
-  .title {
-    vertical-align: middle;
-    line-height: 102px;
-    font-size: 1.6em;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    color: $md-orange-800;
+
+  .header-title-container {
+    height: 70px;
+    width: 960px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: solid 2px whitesmoke;
+    background-color: $md-orange-700;
+    @include md-box-shadow(5);
+    h2 {
+      font-family: earthorbiter;
+      font-weight: normal;
+      text-align: center;
+      line-height: 70px;
+      font-size: 38px;
+      color: white;
+    }
+
+    h2::first-letter {
+      color: black;
+    }
+
   }
 }
