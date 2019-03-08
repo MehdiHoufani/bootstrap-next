@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import App from "../app";
 
 class Index extends Component {
   render = () => {
     return (
-      <div>
+      <Fragment>
         <App />
-      </div>
+      </Fragment>
     );
   };
 }

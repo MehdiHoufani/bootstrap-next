@@ -22,24 +22,37 @@ $md-secondary-color: $md-deep-orange-a-200;
   src: url("/static/fonts/earthorbiter/earthorbiterbold.ttf") format("truetype");
 }
 
-.nav {
-  height: 70px;
-  .button {
-    height: 100%;
-    width: 80%;
-    border-radius: 5px;
-    border: solid 2px whitesmoke;
-    background-color: $md-orange-700;
-    @include md-box-shadow(5);
-    h3 {
-      color: whitesmoke;
-      line-height: 70px;
-      font-family: earthorbiter;
-      font-size: 22px;
-      margin-bottom: 0;
-    }
-    h3::first-letter {
-      color: black;
-    }
-  }
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#__next {
+  height: 100%
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.background {
+  height: 100%;
+  background-image: url("/static/pictures/background/bg-collective.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.filter {
+  color: black;
+  opacity: 0.5;
 }
