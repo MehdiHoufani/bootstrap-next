@@ -5,7 +5,7 @@ import { Grid, Cell } from "react-md";
 const Header = () => (
   <header>
     <Grid className={"header"}>
-      <Cell size={3}>
+      <Cell size={3} style={{ margin: 0 }}>
         <img src="/static/Logo_Arrow.svg" alt="" className={"header-logo"} />
       </Cell>
       <Cell size={8} desktopOffset={1}>

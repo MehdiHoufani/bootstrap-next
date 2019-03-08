@@ -21,3 +21,25 @@ $md-secondary-color: $md-deep-orange-a-200;
   font-weight: bold;
   src: url("/static/fonts/earthorbiter/earthorbiterbold.ttf") format("truetype");
 }
+
+.nav {
+  height: 70px;
+  .button {
+    height: 100%;
+    width: 80%;
+    border-radius: 5px;
+    border: solid 2px whitesmoke;
+    background-color: $md-orange-700;
+    @include md-box-shadow(5);
+    h3 {
+      color: whitesmoke;
+      line-height: 70px;
+      font-family: earthorbiter;
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+    h3::first-letter {
+      color: black;
+    }
+  }
+}
