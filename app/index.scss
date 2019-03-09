@@ -6,10 +6,6 @@ $md-secondary-color: $md-deep-orange-a-200;
 
 @include react-md-everything;
 
-.md-tab--active {
-  background-color: $md-orange-400;
-}
-
 @font-face {
   font-family: "earthorbiter";
   font-style: normal;
@@ -22,13 +18,18 @@ $md-secondary-color: $md-deep-orange-a-200;
   src: url("/static/fonts/earthorbiter/earthorbiterbold.ttf") format("truetype");
 }
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
 }
 
+body {
+  position: fixed;
+}
+
 #__next {
-  height: 100%
+  height: 100%;
 }
 
 .right {
@@ -43,13 +44,32 @@ body, html {
   text-align: center;
 }
 
+.page-content {
+  overflow: scroll;
+  height: 100%
+}
+
 .background {
   height: 100%;
-  background-image: url("/static/pictures/background/bg-collective.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+
+  &.home {
+    background-image: url("/static/pictures/background/bg-home.jpg");
+  }
+
+  &.collectivite {
+    background-image: url("/static/pictures/background/bg-collective.jpg");
+  }
+
+  &.promoteurs {
+    background-image: url("/static/pictures/background/bg-promoteurs.jpg");
+  }
+  &.gamme {
+    background-image: url("/static/pictures/background/bg-gamme.jpg");
+  }
 }
 
 .filter {

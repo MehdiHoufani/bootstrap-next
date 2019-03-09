@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import PropTypes from "prop-types";
 
 import { Grid, Cell } from "react-md";
 
@@ -23,6 +24,10 @@ class Header extends Component {
       this.setState({ fixedNav: false });
   };
 
+  handleChangePage = selectedPage => {
+    this.props.onChangePage(selectedPage);
+  };
+
   render = () => {
     return (
       <header className={"header"}>
@@ -44,17 +49,26 @@ class Header extends Component {
         </Grid>
         <Grid className={`nav ${this.state.fixedNav && "stick"}`}>
           <Cell size={4}>
-            <button className={"button right"}>
+            <button
+              className={"button right"}
+              onMouseUp={() => this.handleChangePage("collectivite")}
+            >
               <h3>solutions collectivités</h3>
             </button>
           </Cell>
           <Cell size={4} className={"center"}>
-            <button className={"button"}>
+            <button
+              className={"button"}
+              onMouseUp={() => this.handleChangePage("promoteurs")}
+            >
               <h3>solutions promoteurs</h3>
             </button>
           </Cell>
           <Cell size={4}>
-            <button className={"button left"}>
+            <button
+              className={"button left"}
+              onMouseUp={() => this.handleChangePage("gamme")}
+            >
               <h3>la gamme</h3>
             </button>
           </Cell>
@@ -63,5 +77,15 @@ class Header extends Component {
     );
   };
 }
+
+Header.propTypes = {
+  currentPage: PropTypes.string,
+  onChangePage: PropTypes.func
+};
+
+Header.defaultProps = {
+  currentPage: null,
+  onChangePage: () => null
+};
 
 export default Header;
