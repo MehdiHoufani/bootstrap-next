@@ -1,0 +1,42 @@
+.page-collectivite {
+  margin-top: -30px;
+  background-color: whitesmoke;
+  .conceptCollectivité1 {
+    &.zoom {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: 0 35%;
+    }
+    &.full {
+      width: 100%;
+    }
+  }
+
+  // generique in future
+  h3 {
+    white-space: normal;
+  }
+
+  .section-1 {
+    padding: 20px;
+    h2 {
+      color: $md-orange-700;
+    }
+  }
+
+  .section-2 {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $md-orange-700;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.28),
+      0 3px 15px 0 rgba(0, 0, 0, 0.24), 0 9px 3px -6px rgba(0, 0, 0, 0.2);
+    .md-grid {
+      padding: 0;
+    }
+  }
+}

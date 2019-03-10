@@ -3,66 +3,65 @@ import React from "react";
 import { Divider, List, ListItem, Subheader, Grid, Cell } from "react-md";
 
 const Collectives = () => (
-  <Cell size={10} offset={1}>
-    <Grid>
-      <h2>
-        {`Notre métier est aussi de faciliter le flux routier en dirigeant
-                de manière claire et précise grace a notre dispositive`}
-      </h2>
-    </Grid>
-    <Grid>
-      <p>
-        {`Nous sommes le partenaire des aménageurs et des collectivités,
+  <React.Fragment>
+    <Grid className={"page-collectivite"}>
+      <Cell size={12}>
+        <div className={"fadedScroller_fade"} />
+        <Grid>
+          <Cell size={12}>
+            <img
+              src={"./static/conceptCollectivité1.jpg"}
+              alt={"conceptCollectivité1"}
+              className={"conceptCollectivité1 zoom"}
+            />
+          </Cell>
+        </Grid>
+        <Grid>
+          <Cell size={6} className={"section-1"}>
+            <h3 style={{ height: "60%" }}>
+              {`Nous sommes le partenaire des aménageurs et des collectivités,
                 gestonnaires de la signalisation des commerces, des services,
                 des entreprises artisanales et industrielles`}
-      </p>
-    </Grid>
-    <Grid>
-      <List className="md-cell md-cell--12">
-        <Subheader primaryText="ARROW, c'est une prise en charge intégrale:" />
-        <Divider />
-        <ListItem
-          primaryText={`D'un projet de convention comprenant une séléction
-                  de mobilier répondant aux besoins de la ville`}
-        />
-        <ListItem
-          primaryText={
-            "De l'etude d'implantation des mobiliers d'informations et d'orientations"
-          }
-        />
-        <ListItem
-          primaryText={`D’une réactualisation annuelle de la liste des entreprises`}
-        />
-        <ListItem
-          primaryText={`D’un entretien régulier de tous les mobiliers attachés
-                   à la convention`}
-        />
-        <ListItem
-          primaryText={`Une assurance déchargeant de toutes responsabilitées
-                   la ville en cas d’accident impliquant nos mobiliers`}
-        />
-      </List>
-    </Grid>
-    <Grid>
-      <Cell size={6}>
-        <h3
-          style={{ whiteSpace: "normal" }}
-        >{`Notre concept est gratuit pour la commune et autofinancé par les
-              acteurs économiques.`}</h3>
-        <h3
-          style={{ whiteSpace: "normal" }}
-        >{`Nous étudions vos projets pour vous présenter la solution sur-mesure
-                   des besoins de votre commune.`}</h3>
-      </Cell>
-      <Cell size={6}>
-        <img
-          src={"./static/conceptCollectivité1.jpg"}
-          alt={""}
-          style={{ width: "100%" }}
-        />
+            </h3>
+            <h2>
+              {`Notre concept est gratuit pour la commune et
+              autofinancé par les acteurs economiques`}
+            </h2>
+          </Cell>
+          <Cell size={6} className={"section-2"}>
+            <Grid>
+              <Cell size={12}>{"ZONE D'ACTIVITES"}</Cell>
+            </Grid>
+            <Grid>
+              <Cell size={12}>{"ZONE COMMERCIALE"}</Cell>
+            </Grid>
+            <Grid>
+              <Cell size={12}>{"CENTRE VILLE"}</Cell>
+            </Grid>
+          </Cell>
+        </Grid>
+        <Grid>
+          <Cell size={12}>
+            <h3>{`Nous étudions vos projets pour vous presenter la solution adaptée
+          à vos besoins`}</h3>
+            <h3>
+              {`Projet de convention - Etude d'implantation - Entretien régulier
+           de tous les mobiliers rattachés à la convention`}
+            </h3>
+          </Cell>
+        </Grid>
+        <Grid>
+          <Cell size={12}>
+            <img
+              src={"./static/conceptCollectivité1.jpg"}
+              alt={"conceptCollectivité"}
+              className={"conceptCollectivité1 full"}
+            />
+          </Cell>
+        </Grid>
       </Cell>
     </Grid>
-  </Cell>
+  </React.Fragment>
 );
 
 export default Collectives;
