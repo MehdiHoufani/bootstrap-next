@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { TabsContainer, Tabs, Tab, Cell, Grid } from "react-md";
+import { Cell, Grid } from "react-md";
+import { Router, Route, Switch } from "react-router-dom";
 
 import "./index.scss";
 
@@ -18,11 +19,12 @@ class App extends Component {
   };
 
   render() {
+    const { currentPage } = this.state;
     return (
-      <div>
-        <div className={`background ${this.state.currentPage}`} />
+      <React.Fragment>
+        <div className={`background ${currentPage}`} />
         <Header
-          currentPage={this.state.currentPage}
+          currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
         <Grid className="page-content">
@@ -30,7 +32,7 @@ class App extends Component {
             <Collectives />
           </Cell>
         </Grid>
-      </div>
+      </React.Fragment>
     );
   }
 }

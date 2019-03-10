@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
-
 import { Grid, Cell } from "react-md";
 
 class Header extends Component {
