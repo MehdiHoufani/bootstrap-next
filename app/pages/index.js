@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Cell, Grid } from "react-md";
-import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
 
 import "./index.scss";
 
@@ -9,7 +9,7 @@ import Header from "../components/header";
 import Collectives from "./collectives";
 import Home from "./home/index";
 
-class App extends Component {
+class Index extends Component {
   state = {
     currentPage: "home"
   };
@@ -29,7 +29,8 @@ class App extends Component {
         />
         <Grid className="page-content">
           <Cell size={10} desktopOffset={1} className={"scrollable-content"}>
-            <Collectives />
+            {currentPage === "home" && <Home />}
+            {currentPage === "collectivite" && <Collectives />}
           </Cell>
         </Grid>
       </React.Fragment>
@@ -37,4 +38,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Index;

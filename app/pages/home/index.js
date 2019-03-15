@@ -5,24 +5,9 @@ import BlockSlider from "..";
 
 const Home = () => (
   <Grid>
-    <Cell size={4}>
-      <BlockSlider
-        text={["SOLUTIONS", "COLLECTIVES"]}
-        slides={[{}, {}, {}]}
-        autoplay
-      />
-    </Cell>
-    <Cell size={4}>
-      <BlockSlider
-        text={["SOLUTIONS", "PROMOTEURS"]}
-        classNames={"block-slider-center"}
-        slides={[{}, {}, {}]}
-        autoplay
-      />
-    </Cell>
-    <Cell size={4}>
-      <BlockSlider text={["NOTRE", "GAMME"]} slides={[{}, {}, {}]} autoplay />
-    </Cell>
+    <Cell size={4} />
+    <Cell size={4} />
+    <Cell size={4} />
   </Grid>
 );
 

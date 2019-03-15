@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Cell } from "react-md";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
@@ -24,10 +25,15 @@ class Header extends Component {
   };
 
   handleChangePage = selectedPage => {
-    this.props.onChangePage(selectedPage);
+    const { onChangePage, currentPage } = this.props;
+    if (selectedPage === currentPage) return;
+    onChangePage(selectedPage);
   };
 
+  isPageActive = page => (this.props.currentPage === page ? "active" : "");
+
   render = () => {
+    const { fixedNav } = this.state;
     return (
       <header className={"header"}>
         <Grid>
@@ -46,10 +52,10 @@ class Header extends Component {
             </div>
           </Cell>
         </Grid>
-        <Grid className={`nav ${this.state.fixedNav && "stick"}`}>
+        <Grid className={`nav ${fixedNav ? "stick" : ""}`}>
           <Cell size={4}>
             <button
-              className={"button right"}
+              className={`button right ${this.isPageActive("collectivite")}`}
               onMouseUp={() => this.handleChangePage("collectivite")}
             >
               <h3>solutions collectivités</h3>
@@ -57,7 +63,7 @@ class Header extends Component {
           </Cell>
           <Cell size={4} className={"center"}>
             <button
-              className={"button"}
+              className={`button ${this.isPageActive("promoteurs")}`}
               onMouseUp={() => this.handleChangePage("promoteurs")}
             >
               <h3>solutions promoteurs</h3>
@@ -65,7 +71,7 @@ class Header extends Component {
           </Cell>
           <Cell size={4}>
             <button
-              className={"button left"}
+              className={`button left ${this.isPageActive("gamme")}`}
               onMouseUp={() => this.handleChangePage("gamme")}
             >
               <h3>la gamme</h3>

@@ -1,10 +1,6 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { stylesheet } from "./index.scss";
-
-import App from ".";
-import { StaticRouter } from "react-router-dom";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -24,8 +20,7 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-
-          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+          <style dangerouslySetInnerHTML={{ __html: styleTags }} />
         </Head>
         <body className="custom_class">
           <div className="root">{main}</div>
