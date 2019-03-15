@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Cell, Grid } from "react-md";
-import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
 
 import "./index.scss";
 

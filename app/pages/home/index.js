@@ -5,7 +5,9 @@ import BlockSlider from "..";
 
 const Home = () => (
   <Grid>
-    <Cell size={4} />
+    <Cell size={4}>
+
+    </Cell>
     <Cell size={4} />
     <Cell size={4} />
   </Grid>
