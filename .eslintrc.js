@@ -29,5 +29,10 @@ module.exports = {
     ],
     semi: ["error", "always"],
     "no-console": "off"
+  },
+  settings: {
+    react: {
+      version: "detect"
+    }
   }
 };
