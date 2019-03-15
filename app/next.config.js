@@ -4,6 +4,7 @@ const withSass = require("@zeit/next-sass");
 const path = require("path");
 
 module.exports = withSass({
+  distDir: "../build",
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
     config.module.rules.push(
       ...[

@@ -12,12 +12,15 @@
     "npm": ">=6.9.0"
   },
   "scripts": {
-    "prestart": "next build",
-    "export": "next build app && next export app",
+    "prestart": "npm run build",
+    "clean-cache": "rm -rf node_modules/.cache",
+    "clean:build": "rm -rf build && rm -rf app/out",
+    "build:next": "cross-env NODE_ENV=production next build app",
     "test": "test",
-    "dev": "cross-env NODE_ENV=development && node server/main.js",
-    "build": "next build app",
-    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server/main.js"
+    "dev": "cross-env NODE_ENV=development && npm cache clean --force && node server/main.js",
+    "build": "next build app && next export app",
+    "start": "cross-env NODE_ENV=production && node server/main.js",
+    "start:optim": "cross-env NODE_ENV=production && node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server/main.js"
   },
   "author": "mehdi houfani",
   "license": "ISC",
@@ -35,6 +38,7 @@
     "react-md": "^1.9.2",
     "react-motion": "^0.5.2",
     "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
     "react-slick": "^0.23.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.3",

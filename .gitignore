@@ -4,3 +4,5 @@
 node_modules/
 dist/
 assets/
+build/
+app/out/
