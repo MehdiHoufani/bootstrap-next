@@ -33,7 +33,7 @@ class Header extends Component {
         <Grid>
           <Cell size={3} style={{ margin: 0 }}>
             <img
-              src="/static/Logo_Arrow.svg"
+              src="/app/static/Logo_Arrow.svg"
               alt=""
               className={"header-logo"}
             />

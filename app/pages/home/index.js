@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
 
-import BlockSlider from "../../index";
+import BlockSlider from "..";
 
 const Home = () => (
   <Grid>

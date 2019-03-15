@@ -4,10 +4,10 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import "./index.scss";
 
-import Header from "./components/header";
+import Header from "../components/header";
 
-import Collectives from "./pages/collectives";
-import Home from "./pages/home/index";
+import Collectives from "./collectives";
+import Home from "./home/index";
 
 class App extends Component {
   state = {

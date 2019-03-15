@@ -1,22 +1,24 @@
-@import "~react-md/src/scss/_react-md.scss";
-@import "./components/index.scss";
-@import "./pages/collectives/index.scss";
+@import "../../node_modules/react-md/src/scss/react-md";
+@import "../components/index";
+@import "collectives/index";
 
 $md-primary-color: $md-orange-800;
 $md-secondary-color: $md-deep-orange-a-200;
+$path: "/static";
 
 @include react-md-everything;
 
 @font-face {
   font-family: "earthorbiter";
   font-style: normal;
-  src: url("/static/fonts/earthorbiter/earthorbiter.ttf") format("truetype");
+  src: url("#{$path}/fonts/earthorbiter/earthorbiter.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "earthorbiter";
   font-weight: bold;
-  src: url("/static/fonts/earthorbiter/earthorbiterbold.ttf") format("truetype");
+  src: url("#{$path}/fonts/earthorbiter/earthorbiterbold.ttf")
+    format("truetype");
 }
 
 body,
@@ -68,18 +70,18 @@ body {
   background-attachment: fixed;
 
   &.home {
-    background-image: url("/static/pictures/background/bg-home.jpg");
+    background-image: url("#{$path}/pictures/background/bg-home.JPG");
   }
 
   &.collectivite {
-    background-image: url("/static/pictures/background/bg-collective.jpg");
+    background-image: url("#{$path}/pictures/background/bg-collective.jpg");
   }
 
   &.promoteurs {
-    background-image: url("/static/pictures/background/bg-promoteurs.jpg");
+    background-image: url("#{$path}/pictures/background/bg-promoteurs.jpg");
   }
   &.gamme {
-    background-image: url("/static/pictures/background/bg-gamme.jpg");
+    background-image: url("#{$path}/pictures/background/bg-gamme.JPG");
   }
 }
 
