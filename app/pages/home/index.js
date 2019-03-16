@@ -5,13 +5,13 @@ import BlockSlider from "../../components/blockSlider/blockSlider";
 
 const Home = () => (
   <Grid>
-    <Cell size={4} style={{ backgroundColor: "white" }}>
+    <Cell size={4}>
+      <BlockSlider classNames={"right"} />
+    </Cell>
+    <Cell size={4}>
       <BlockSlider />
     </Cell>
-    <Cell size={4} style={{ backgroundColor: "white" }}>
-      <BlockSlider />
-    </Cell>
-    <Cell size={4} style={{ backgroundColor: "white" }}>
+    <Cell size={4} classNames={"left"}>
       <BlockSlider />
     </Cell>
   </Grid>

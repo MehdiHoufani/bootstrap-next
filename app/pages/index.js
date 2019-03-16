@@ -26,18 +26,13 @@ class Index extends Component {
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
-        <Grid className="page-content">
-          {currentPage === "home" && (
-            <Cell size={12} className={"scrollable-content"}>
-              <Home />
-            </Cell>
-          )}
-          {currentPage === "collectivite" && (
+        {currentPage === "collectivite" && (
+          <Grid className="page-content">
             <Cell size={10} desktopOffset={1} className={"scrollable-content"}>
               <Collectives />
             </Cell>
-          )}
-        </Grid>
+          </Grid>
+        )}
       </React.Fragment>
     );
   }

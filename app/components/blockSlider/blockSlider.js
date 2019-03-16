@@ -17,13 +17,15 @@ class BlockSlider extends Component {
   render() {
     const { text, classNames, slides, settings } = this.props;
     return (
-      <Grid className={`block-slider ${classNames}`}>
-        <Cell size={12} className={"block-slider-body"}>
-          <Carousel {...settings}>
-            {slides.map((slide, idx) => (
-              <Slide key={idx.toString()} {...slide} />
-            ))}
-          </Carousel>
+      <Grid>
+        <Cell size={12}>
+          <div className={`block-carousel ${classNames}`}>
+            <button onMouseUp={this.props.onMouseUp}>
+              <Carousel {...settings}>
+                <Slide />
+              </Carousel>
+            </button>
+          </div>
         </Cell>
       </Grid>
     );
@@ -34,16 +36,19 @@ BlockSlider.propTypes = {
   text: PropTypes.array,
   slides: PropTypes.array,
   settings: PropTypes.object,
-  classNames: PropTypes.string
+  classNames: PropTypes.string,
+  onMouseUp: PropTypes.func
 };
 
 BlockSlider.defaultProps = {
   text: [],
   slides: [],
   settings: {
-    showArrows: true
+    showArrows: true,
+    showThumbs: false
   },
-  classNames: null
+  classNames: null,
+  onMouseUp: () => null
 };
 
 export default BlockSlider;

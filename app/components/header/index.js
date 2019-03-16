@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Cell } from "react-md";
-import { Link } from "react-router-dom";
+import BlockSlider from "../../components/blockSlider/blockSlider";
 
 class Header extends Component {
   constructor(props) {
@@ -33,6 +33,7 @@ class Header extends Component {
   isPageActive = page => (this.props.currentPage === page ? "active" : "");
 
   render = () => {
+    const isHome = this.props.currentPage === "home";
     const { fixedNav } = this.state;
     return (
       <header className={"header"}>
@@ -46,36 +47,81 @@ class Header extends Component {
           </Cell>
           <Cell size={8} desktopOffset={1}>
             <div className={"header-title"}>
-              <div className={"header-title-container"}>
+              <button
+                className={"header-title-container"}
+                onMouseUp={() => this.handleChangePage("home")}
+              >
                 <h2>{"mobilier et signaletique en zone urbaine"}</h2>
-              </div>
+              </button>
             </div>
           </Cell>
         </Grid>
         <Grid className={`nav ${fixedNav ? "stick" : ""}`}>
-          <Cell size={4}>
-            <button
-              className={`button right ${this.isPageActive("collectivite")}`}
-              onMouseUp={() => this.handleChangePage("collectivite")}
-            >
-              <h3>solutions collectivités</h3>
-            </button>
+          <Cell size={4} className={"nav-item"}>
+            <div className={"nav-item-bg"} />
+            <Grid>
+              <Cell size={12}>
+                <button
+                  className={`button ${this.isPageActive("collectivite")}`}
+                  onMouseUp={() => this.handleChangePage("collectivite")}
+                >
+                  <h3>solutions collectivités</h3>
+                </button>
+              </Cell>
+            </Grid>
+            {isHome && (
+              <Grid>
+                <Cell size={12}>
+                  <BlockSlider
+                    onMouseUp={() => this.handleChangePage("collectivite")}
+                  />
+                </Cell>
+              </Grid>
+            )}
           </Cell>
-          <Cell size={4} className={"center"}>
-            <button
-              className={`button ${this.isPageActive("promoteurs")}`}
-              onMouseUp={() => this.handleChangePage("promoteurs")}
-            >
-              <h3>solutions promoteurs</h3>
-            </button>
+          <Cell size={4} className={"nav-item"}>
+            <div className={"nav-item-bg"} />
+            <Grid>
+              <Cell size={12}>
+                <button
+                  className={`button ${this.isPageActive("promoteurs")}`}
+                  onMouseUp={() => this.handleChangePage("promoteurs")}
+                >
+                  <h3>solutions promoteurs</h3>
+                </button>
+              </Cell>
+            </Grid>
+            {isHome && (
+              <Grid>
+                <Cell size={12}>
+                  <BlockSlider
+                    onMouseUp={() => this.handleChangePage("promoteurs")}
+                  />
+                </Cell>
+              </Grid>
+            )}
           </Cell>
-          <Cell size={4}>
-            <button
-              className={`button left ${this.isPageActive("gamme")}`}
-              onMouseUp={() => this.handleChangePage("gamme")}
-            >
-              <h3>la gamme</h3>
-            </button>
+          <Cell size={4} className={"nav-item"}>
+            <div className={"nav-item-bg"} />
+            <Grid>
+              <Cell size={12}>
+                <button
+                  className={`button left ${this.isPageActive("gamme")}`}
+                  onMouseUp={() => this.handleChangePage("gamme")}
+                >
+                  <h3>la gamme</h3>
+                </button>
+              </Cell>
+            </Grid>
+            {isHome && (
+              <Grid>
+                <Cell size={12}>
+                  <BlockSlider
+                    onMouseUp={() => this.handleChangePage("gamme")}
+                  />
+                </Cell>
+              </Grid>
+            )}
           </Cell>
         </Grid>
       </header>

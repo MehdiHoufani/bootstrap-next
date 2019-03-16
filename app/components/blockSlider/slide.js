@@ -23,7 +23,7 @@ Slide.propTypes = {
   alt: PropTypes.string
 };
 Slide.defaultProps = {
-  url: "",
+  url: "./static/conceptCollectivité1.jpg",
   alt: ""
 };
 
