@@ -20,7 +20,7 @@ module.exports = withSass({
           use: ["babel-loader", "eslint-loader"]
         },
         {
-          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|pdf)$/,
           use: {
             loader: "url-loader",
             options: {

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Cell, Grid } from "react-md";
 
 import "./index.scss";
 
 import Header from "../components/header";
 
 import Collectives from "./collectives";
-import Home from "./home/index";
+import Promoteurs from "./promoteurs";
 
 class Index extends Component {
   state = {
@@ -26,13 +25,8 @@ class Index extends Component {
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
-        {currentPage === "collectivite" && (
-          <Grid className="page-content">
-            <Cell size={10} desktopOffset={1} className={"scrollable-content"}>
-              <Collectives />
-            </Cell>
-          </Grid>
-        )}
+        {currentPage === "collectivite" && <Collectives />}
+        {currentPage === "promoteurs" && <Promoteurs />}
       </React.Fragment>
     );
   }

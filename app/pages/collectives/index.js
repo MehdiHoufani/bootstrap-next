@@ -1,9 +1,10 @@
 import React from "react";
 
-import { Divider, List, ListItem, Subheader, Grid, Cell } from "react-md";
+import { Grid, Cell } from "react-md";
+import Content from "../../containers/content";
 
 const Collectives = () => (
-  <React.Fragment>
+  <Content>
     <Grid className={"page-collectivite"}>
       <Cell size={12}>
         <div className={"fadedScroller_fade"} />
@@ -61,7 +62,7 @@ const Collectives = () => (
         </Grid>
       </Cell>
     </Grid>
-  </React.Fragment>
+  </Content>
 );
 
 export default Collectives;
