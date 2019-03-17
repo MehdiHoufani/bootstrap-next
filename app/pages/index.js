@@ -3,9 +3,10 @@ import React, { Component } from "react";
 import "./index.scss";
 
 import Header from "../components/header";
+import CrossPicture from "../components/crossPicture";
 
-import Collectives from "./collectives";
-import Promoteurs from "./promoteurs";
+import Collectives from "../modules/collectives";
+import Promoteurs from "../modules/promoteurs";
 
 class Index extends Component {
   state = {
@@ -20,7 +21,7 @@ class Index extends Component {
     const { currentPage } = this.state;
     return (
       <React.Fragment>
-        <div className={`background ${currentPage}`} />
+        <CrossPicture currentPage={currentPage} />
         <Header
           currentPage={currentPage}
           onChangePage={this.handleChangePage}

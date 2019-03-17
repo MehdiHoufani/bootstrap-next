@@ -1,26 +1,13 @@
 @import "../../node_modules/react-md/src/scss/react-md";
 @import "../components/index";
-@import "collectives/index";
-@import "promoteurs/index";
+@import "../modules/collectives/index";
+@import "../modules/promoteurs/index";
+@import "../sass/fonts";
 
 $md-primary-color: $md-orange-800;
 $md-secondary-color: $md-deep-orange-a-200;
-$assetsPath: "/static";
 
 @include react-md-everything;
-
-@font-face {
-  font-family: "earthorbiter";
-  font-style: normal;
-  src: url("#{$assetsPath}/fonts/earthorbiter/earthorbiter.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "earthorbiter";
-  font-weight: bold;
-  src: url("#{$assetsPath}/fonts/earthorbiter/earthorbiterbold.ttf")
-    format("truetype");
-}
 
 body,
 html {

@@ -1,0 +1,15 @@
+$assetsPath: "/static";
+
+@font-face {
+  font-family: "earthorbiter";
+  font-style: normal;
+  src: url("#{$assetsPath}/fonts/earthorbiter/earthorbiter.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "earthorbiter";
+  font-weight: bold;
+  src: url("#{$assetsPath}/fonts/earthorbiter/earthorbiterbold.ttf")
+    format("truetype");
+}
