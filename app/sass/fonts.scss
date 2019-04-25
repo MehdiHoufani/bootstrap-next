@@ -13,3 +13,21 @@ $assetsPath: "/static";
   src: url("#{$assetsPath}/fonts/earthorbiter/earthorbiterbold.ttf")
     format("truetype");
 }
+
+h2 {
+  font-size: 32px;
+  white-space: normal;
+}
+
+h3 {
+  font-size: 26px;
+  white-space: normal;
+}
+
+p {
+  font-size: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}

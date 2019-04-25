@@ -13,30 +13,37 @@
     }
   }
 
-  // generique in future
-  h3 {
-    white-space: normal;
-  }
-
   .section-1 {
-    padding: 20px;
-    h2 {
-      color: $md-orange-700;
-    }
-  }
+    .section-1-1 {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px;
 
-  .section-2 {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 40px;
-    font-weight: bold;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: $md-orange-700;
-    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.28),
-      0 3px 15px 0 rgba(0, 0, 0, 0.24), 0 9px 3px -6px rgba(0, 0, 0, 0.2);
-    .md-grid {
-      padding: 0;
+      h2 {
+        margin: auto;
+        color: $theme-primary-color;
+      }
+    }
+    .section-1-2 {
+      display: flex;
+      flex-direction: column;
+      background-color: $theme-primary-color;
+      min-height: 300px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      h2 {
+        margin: auto;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 40px;
+        font-weight: bold;
+      }
+      box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.28),
+        0 3px 15px 0 rgba(0, 0, 0, 0.24), 0 9px 3px -6px rgba(0, 0, 0, 0.2);
+      .md-grid {
+        padding: 0;
+      }
     }
   }
 }

@@ -17,9 +17,9 @@ const Collectives = () => (
             />
           </Cell>
         </Grid>
-        <Grid>
-          <Cell size={6} className={"section-1"}>
-            <h3 style={{ height: "60%" }}>
+        <Grid className={"section-1"}>
+          <Cell size={6} className={"section-1-1"}>
+            <h3>
               {`Nous sommes le partenaire des aménageurs et des collectivités,
                 gestonnaires de la signalisation des commerces, des services,
                 des entreprises artisanales et industrielles`}
@@ -29,16 +29,10 @@ const Collectives = () => (
               autofinancé par les acteurs economiques`}
             </h2>
           </Cell>
-          <Cell size={6} className={"section-2"}>
-            <Grid>
-              <Cell size={12}>{"ZONE D'ACTIVITES"}</Cell>
-            </Grid>
-            <Grid>
-              <Cell size={12}>{"ZONE COMMERCIALE"}</Cell>
-            </Grid>
-            <Grid>
-              <Cell size={12}>{"CENTRE VILLE"}</Cell>
-            </Grid>
+          <Cell size={6} className={"section-1-2"}>
+            <h2>{"ZONE D'ACTIVITES"}</h2>
+            <h2>{"ZONE COMMERCIALE"}</h2>
+            <h2>{"CENTRE VILLE"}</h2>
           </Cell>
         </Grid>
         <Grid>

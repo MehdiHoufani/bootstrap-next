@@ -39,14 +39,14 @@ const Promoteurs = () => {
             </Cell>
           </Grid>
           <Grid className={"section-3"}>
-            <Cell size={5}>
+            <Cell size={5} className={"section-3-1"}>
               <img
                 src={`${dirPath}promoteur-3.png`}
                 alt={""}
                 className={"illustration-3"}
               />
             </Cell>
-            <Cell size={7}>
+            <Cell size={7} className={"section-3-2"}>
               <h3>{`Confiez-nous votre projet`}</h3>
               <p>{`Nous vous fournissons un plan de jalonement, des
               fiches simulations et nous nous occupons des demarches
@@ -54,7 +54,7 @@ const Promoteurs = () => {
             </Cell>
           </Grid>
           <Grid className={"section-4"}>
-            <Cell size={6}>
+            <Cell size={6} className={"section-4-1"}>
               <p>{`De l'etude, à la fabrication, à l'installation, l'entretien, le
               démontage en fin de contrat, ARROW est la solution efficace à la localisation
               de votre B.V..`}</p>
