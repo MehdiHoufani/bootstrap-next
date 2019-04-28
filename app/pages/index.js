@@ -7,10 +7,11 @@ import CrossPicture from "../components/crossPicture";
 
 import Collectives from "../modules/collectives";
 import Promoteurs from "../modules/promoteurs";
+import Gamme from "../modules/gamme";
 
 class Index extends Component {
   state = {
-    currentPage: "home"
+    currentPage: "gamme"
   };
 
   handleChangePage = currentPage => {
@@ -28,6 +29,7 @@ class Index extends Component {
         />
         {currentPage === "collectivite" && <Collectives />}
         {currentPage === "promoteurs" && <Promoteurs />}
+        {currentPage === "gamme" && <Gamme />}
       </React.Fragment>
     );
   }

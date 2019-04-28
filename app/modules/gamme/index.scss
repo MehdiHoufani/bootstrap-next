@@ -1,0 +1,33 @@
+.gamme {
+  .tabList {
+    z-index: 1;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin: 20px 0 20px 0;
+    }
+    .button {
+      height: 70px;
+      width: 100%;
+      background-color: $theme-primary-color;
+      border-radius: 5px;
+      border: solid 2px whitesmoke;
+      &:hover {
+        background-color: $theme-secondary-color;
+        h3::first-letter {
+          color: $md-orange-700;
+        }
+      }
+      h3 {
+        font-size: 22px;
+        color: whitesmoke;
+        font-family: $theme-primary-font;
+        margin-bottom: 0;
+      }
+      h3::first-letter {
+        color: black;
+      }
+    }
+  }
+}
