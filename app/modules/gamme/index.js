@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Cell } from "react-md";
 
 import tabs from "./data";
+import { Archer } from "./tabsContent/index";
 
 class Gamme extends React.Component {
   constructor(props) {
@@ -12,20 +13,20 @@ class Gamme extends React.Component {
   }
 
   handleChangeTab = id => {
-    this.setState(() => ({ tab: id }));
+    this.setState(() => ({ tabActive: id }));
   };
 
   render() {
     const { tabActive } = this.state;
     return (
       <Grid className={"gamme"}>
-        <Cell size={4} className={"tabList"}>
+        <Cell size={2} className={"tabList"}>
           <ul>
             {tabs.map((tab, tabId) => (
               <li key={tabId}>
                 <button
-                  className={`button ${tabId === tabActive ? "active" : ""}`}
-                  onClick={() => this.handleChangeTab(0)}
+                  className={`button ${tabId === tabActive && "active"}`}
+                  onClick={() => this.handleChangeTab(tabId)}
                 >
                   <h3>{tab.name}</h3>
                 </button>
@@ -33,8 +34,8 @@ class Gamme extends React.Component {
             ))}
           </ul>
         </Cell>
-        <Cell size={8}>
-          <p>constructruction</p>
+        <Cell size={10} className={"tabContainer"}>
+          {tabActive === 0 && <Archer />}
         </Cell>
       </Grid>
     );

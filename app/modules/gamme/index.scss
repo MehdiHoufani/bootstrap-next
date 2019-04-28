@@ -1,8 +1,10 @@
 .gamme {
+  height: 100%;
   .tabList {
     z-index: 1;
     ul {
       list-style-type: none;
+      padding: 0;
     }
     li {
       margin: 20px 0 20px 0;
@@ -28,6 +30,23 @@
       h3::first-letter {
         color: black;
       }
+
+      &.active {
+        background-color: $theme-secondary-color;
+        h3::first-letter {
+          color: $md-orange-700;
+        }
+      }
     }
+  }
+
+  .tabContainer {
+    z-index: 1;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+    height: 70%;
+    @include md-box-shadow(5);
+    @import "./tabsContent/index";
   }
 }
