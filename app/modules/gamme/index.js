@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
 
-import tabContent from "./tabsContent/index";
+import tabContent from "./tabsContent";
 
 class Gamme extends React.Component {
   constructor(props) {
@@ -11,11 +11,7 @@ class Gamme extends React.Component {
     };
   }
 
-  handleChangeTab = id => {
-    this.setState(() => ({ tabActive: id }));
-  };
-
-  render() {
+  render = () => {
     const { tabActive } = this.state;
     const { Content } = tabContent[tabActive];
     return (
@@ -26,7 +22,7 @@ class Gamme extends React.Component {
               <li key={keyTab}>
                 <button
                   className={`button ${keyTab === tabActive && "active"}`}
-                  onClick={() => this.handleChangeTab(keyTab)}
+                  onClick={() => this.setState(() => ({ tabActive: keyTab }))}
                 >
                   <h3>{name}</h3>
                 </button>
@@ -39,7 +35,7 @@ class Gamme extends React.Component {
         </Cell>
       </Grid>
     );
-  }
+  };
 }
 
 export default Gamme;

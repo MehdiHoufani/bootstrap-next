@@ -1,4 +1,4 @@
-import Archer from "./archer/archer";
+import Archer from "./archer/index";
 import School from "./school/index";
 import Tottem from "./tottem/index";
 import Enseigne from "./enseigne/index";
