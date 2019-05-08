@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Cell } from "react-md";
 
 import tabs from "./data";
-import { Archer } from "./tabsContent/index";
+import { Archer, School } from "./tabsContent/index";
 
 class Gamme extends React.Component {
   constructor(props) {
@@ -36,6 +36,7 @@ class Gamme extends React.Component {
         </Cell>
         <Cell size={10} className={"tabContainer"}>
           {tabActive === 0 && <Archer />}
+          {tabActive === 1 && <School />}
         </Cell>
       </Grid>
     );

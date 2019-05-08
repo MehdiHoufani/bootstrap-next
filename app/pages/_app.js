@@ -1,6 +1,5 @@
 import React from "react";
 import App, { Container } from "next/app";
-import { StaticRouter } from "react-router-dom";
 
 class ArrowApp extends App {
   static async getInitialProps({ Component, ctx }) {
