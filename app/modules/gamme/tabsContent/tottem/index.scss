@@ -1,2 +1,63 @@
 .tab-tottem {
+  .container-illustration-1 {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    .illustration-1 {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      object-position: 0 25%;
+      transform: scale(1.2);
+      margin-left: -80px;
+    }
+  }
+  .section-2 {
+    height: 900px;
+    .paragraph {
+      height: 50%;
+    }
+
+    .container-illustration-2 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .illustration-2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 34% 0%;
+      }
+    }
+
+    .container-illustration-3 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .illustration-3 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 34% 0%;
+      }
+    }
+
+    .container-illustration-4 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .illustration-4 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 34% 0%;
+      }
+    }
+  }
 }
