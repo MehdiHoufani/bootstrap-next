@@ -17,10 +17,11 @@ const Tottem = () => (
     <Grid>
       <Cell size={12}>
         <p>
-          {"Notre totem QUIVER a été développé pour une lecture d’informa􏰀ons " +
-            "rapide et efficace des pôles d’intérêts des communes mais également " +
-            "accroître la visibilité des entreprises.\n" +
-            "Ses dimensions et son design sont parfaitement adaptés aux aggloméra􏰀ons et zones d’ac􏰀vités."}
+          Notre totem QUIVER a été développé pour une lecture
+          d&quotinformati􏰀ons rapide et efficace des pôles d’intérêts des
+          communes mais également accroitre la visibilité des entreprises. Ses
+          dimensions et son design sont parfaitement adaptés aux aggloméra􏰀ons
+          et zones d’ac􏰀vités.
         </p>
       </Cell>
     </Grid>
@@ -37,9 +38,13 @@ const Tottem = () => (
       <Cell size={6}>
         <Grid className={"paragraph"}>
           <Cell size={12}>
-            {"Ce totem est des􏰀né autant aux collec􏰀vités qu’aux entreprises ayant le besoin d’indiquer leur site et de lui donner une image dynamique et nouvelle.\n" +
-              "Nous somme en mesure également de vous proposer les totems plats ou galbés, éclairés ou non.\n" +
-              "L’équipe de concep􏰀on ARROW est capable de vous proposer des structures sur mesure selon vos images, vos envies. Nous me􏰁ons tout en oeuvre pour répondre à vos a􏰁entes."}
+            Ce totem est destiné autant aux collectivités qu&quotaux entreprises
+            ayant le besoin d’indiquer leur site et de lui donner une image
+            dynamique et nouvelle. Nous somme en mesure également de vous
+            proposer les totems plats ou galbés, éclairés ou non. L&quotéquipe
+            de concepti􏰀on ARROW est capable de vous proposer des structures sur
+            mesure selon vos images, vos envies. Nous me􏰁ons tout en oeuvre pour
+            répondre à vos a􏰁ttentes.
           </Cell>
         </Grid>
         <Grid className={"paragraph"}>
@@ -48,6 +53,7 @@ const Tottem = () => (
               <img
                 className={"illustration-3"}
                 src={`${dirPath}tottem-3.jpg`}
+                alt={"tottem-3"}
               />
             </div>
           </Cell>
@@ -56,6 +62,7 @@ const Tottem = () => (
               <img
                 className={"illustration-4"}
                 src={`${dirPath}tottem-4.jpg`}
+                alt={"tottem-4"}
               />
             </div>
           </Cell>

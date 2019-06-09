@@ -20,22 +20,19 @@ const Archer = () => (
           </div>
           <br />
           <p>
-            {`La sécurité des piétons est l’affaire de tous. En effet, ce mode de
-      déplacement est naturel et devrait être sans risque.`}
+            La sécurité des piétons est l&quotaffaire de tous. En effet, ce mode
+            de déplacement est naturel et devrait être sans risque.
           </p>
           <br />
           <p>
-            {`
-      En 2017 il a été
-      recensé le décès de 488 piétons et plus 11 000 blessés, dont 2 sur 3 tués
-      en agglométation.`}
+            En 2017 il a été recensé le décès de 488 piétons et plus de 11 000
+            blessés, dont 2 sur 3 tués en agglométation.
           </p>
           <br />
           <p>
-            {`Il y a plusieurs facteurs à cela, notamment l’inatention des conducteurs ainsi
-      que celle des piétons. Dans tous les cas il faut pouvoir convenir d’un dispositif
-      répondant aux besoins de chacun.
-    `}
+            Il y a plusieurs facteurs à cela, notamment l’inatention des
+            conducteurs ainsi que celle des piétons. Dans tous les cas il faut
+            pouvoir convenir d’un dispositif répondant aux besoins de chacun.
           </p>
         </Cell>
       </Grid>
@@ -63,18 +60,15 @@ const Archer = () => (
             </Cell>
             <Cell size={12}>
               <p>
-                {`Reconnaissable de tous de jour comme de nuit,
-            marquant indéniablement les passages piétons,
-            ARCHER saute aux yeux par sa taille, sa couleur,
-            son dynamisme et son originalité renforçant ainsi la visibilité des piétons.`}
+                Reconnaissable de tous de jour comme de nuit, marquant
+                indéniablement les passages piétons, ARCHER saute aux yeux par
+                sa taille, sa couleur, son dynamisme et son originalité
+                renforçant ainsi la visibilité des piétons.
               </p>
               <br />
               <p>
-                {`
-            Il participe également à
-            responsabiliser ces derniers en les incitants à traverser
-             les rues aux passages dédiés.
-    `}
+                Il participe également à responsabiliser ces derniers en les
+                incitants à traverser les rues aux passages dédiés.
               </p>
             </Cell>
             <Cell size={12}>

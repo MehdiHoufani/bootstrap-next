@@ -20,13 +20,13 @@ const Collectives = () => (
         <Grid className={"section-1"}>
           <Cell size={6} className={"section-1-1"}>
             <h3>
-              {`Nous sommes le partenaire des aménageurs et des collectivités,
-                gestonnaires de la signalisation des commerces, des services,
-                des entreprises artisanales et industrielles`}
+              Nous sommes le partenaire des aménageurs et des collectivités,
+              gestonnaires de la signalisation des commerces, des services, des
+              entreprises artisanales et industrielles
             </h3>
             <h2>
-              {`Notre concept est gratuit pour la commune et
-              autofinancé par les acteurs economiques`}
+              Notre concept est gratuit pour la commune et autofinancé par les
+              acteurs economiques
             </h2>
           </Cell>
           <Cell size={6} className={"section-1-2"}>
@@ -37,11 +37,13 @@ const Collectives = () => (
         </Grid>
         <Grid>
           <Cell size={12}>
-            <h3>{`Nous étudions vos projets pour vous presenter la solution adaptée
-          à vos besoins`}</h3>
             <h3>
-              {`Projet de convention - Etude d'implantation - Entretien régulier
-           de tous les mobiliers rattachés à la convention`}
+              Nous étudions vos projets pour vous presenter la solution adaptée
+              à vos besoins
+            </h3>
+            <h3>
+              Projet de convention - Etude d&quotimplantation - Entretien
+              régulier de tous les mobiliers rattachés à la convention
             </h3>
           </Cell>
         </Grid>

@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ["react"],
+  plugins: ["react", "prettier"],
   parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 6,
@@ -16,21 +16,23 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard"
   ],
   rules: {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/prop-types": 2,
-    "max-len": [
-      "warn",
+    "prettier/prettier": [
+      "error",
       {
-        code: 80,
-        ignoreTrailingComments: true,
-        ignoreComments: true,
-        ignoreUrls: true
+        singleQuote: false,
+        tabWidth: 2,
+        printWidth: 80
       }
     ],
+    "max-len": ["warn", { code: 80, ignoreUrls: true }],
     semi: ["error", "always"],
     "no-unused-vars": "off",
     "no-console": "off",
