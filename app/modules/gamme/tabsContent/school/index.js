@@ -14,30 +14,40 @@ const School = () => (
         />
       </div>
     </Cell>
-    <Cell size={12} className={"section-2"}>
-      <h3>{"nous vous présentons, lisa, matt, abie et tom "}</h3>
-    </Cell>
-    <Cell size={12} className={"section-3"}>
+    <Cell size={12} className={"paragraph"}>
+      <h3 className={"title"}>
+        {"nous vous présentons, lisa, matt, abie et tom "}
+      </h3>
+      <br />
       <p>
-        Nous avons mis au point un mobilier clair, efficace reconnaissable de
-        tous à implanter en amont des établissements scolaire pour sensibiliser
-        les automobilistes à la présence d’enfants.
+        Nous avons mis au point un mobilier clair, efficace{" "}
+        <span className={"text-color-theme"}>reconnaissable de tous</span> à
+        implanter en amont des établissements scolaire pour sensibiliser les
+        automobilistes à la présence d’enfants.
       </p>
       <br />
       <p>
-        Chacune de leurs silhoue􏰁ttes, est pensée pour véhiculer un message de
-        bienveillance, de sympathie et d’informa􏰀on claires. Ils seront reconnus
-        dans toute la commune et feront parler d’eux. Leurs images sont faites
-        pour marquer les esprits. Chaque fois que vous croiserez l’un d’entre
-        eux, vous comprendrez qu’il y a une école à proximité. Ils sont
-        recto-verso, ils transme􏰁ent donc plusieurs messages, qui peuvent aussi
-        être des􏰀nés aux piétons.
+        Chacune de leurs silhouettes, est pensée pour véhiculer{" "}
+        <span className={"text-color-theme"}>
+          un message de bienveillance, de sympathie et d’informations claires.
+        </span>{" "}
+        Ils seront reconnus dans toute la commune et feront parler d’eux.{" "}
       </p>
       <br />
-      <h3>VOS ENFANTS VONT LES ADORER</h3>
+      <p>
+        <span className={"text-color-theme"}>
+          Leurs images sont faites pour marquer les esprits.{" "}
+        </span>
+        Chaque fois que vous croiserez l’un d’entre eux, vous comprendrez qu’il
+        y a une école à proximité. Ils sont recto-verso, ils transmettent donc
+        plusieurs messages, qui peuvent aussi être destinés aux piétons.
+      </p>
     </Cell>
     <Cell size={12} className={"section-4"}>
-      <div className={"container-illustration-2"}>
+      <div className={"paragraph"}>
+        <h3 className={"title"}>VOS ENFANTS VONT LES ADORER</h3>
+      </div>
+      <div className={"container-illustration"}>
         <img
           className={"illustration-2 zoom"}
           src={`${dirPath}school-2.jpg`}

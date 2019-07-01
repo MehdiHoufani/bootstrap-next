@@ -1,15 +1,10 @@
-@import "../../node_modules/react-md/src/scss/react-md";
+@import "../sass/react-md";
 @import "../sass/theme";
 @import "../sass/fonts";
 @import "../components/index";
 @import "../modules/collectives/index";
 @import "../modules/promoteurs/index";
 @import "../modules/gamme/index";
-
-$md-primary-color: $md-orange-800;
-$md-secondary-color: $md-deep-orange-a-200;
-
-@include react-md-everything;
 
 body,
 html {
@@ -101,4 +96,15 @@ body {
 .filter {
   color: black;
   opacity: 0.5;
+}
+
+.container-illustration {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  @include md-box-shadow(2);
+}
+.zoom {
+  width: 100%;
+  object-fit: cover;
 }

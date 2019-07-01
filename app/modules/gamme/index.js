@@ -7,7 +7,7 @@ class Gamme extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabActive: 0
+      tabActive: 1
     };
   }
 

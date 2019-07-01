@@ -1,50 +1,25 @@
 .tab-archer {
-  p {
-    font-size: 20px;
-    margin: auto;
-  }
-  .spot {
-    z-index: 1;
-    position: relative;
-    background-color: whitesmoke;
-    @include md-box-shadow(4);
-    h3 {
-      color: $theme-primary-color;
-      margin: 0;
-      padding: 22px 17px 22px 17px;
-      font-size: 22px;
-      font-style: italic;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
   .section-1 {
     .container-illustration {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      height: 350px;
       .illustration-1 {
         &.zoom {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
+          height: 350px;
           object-position: 0 25%;
           transform: scale(1.2);
           margin-left: -50px;
         }
       }
       .spot {
-        position: absolute;
-        top: 40%;
-        left: 47%;
+        right: 10%;
       }
     }
   }
   .section-2 {
     position: relative;
     .spot {
-      position: absolute;
       margin-left: 100px;
       padding-left: 50px;
       padding-right: 50px;
@@ -54,15 +29,9 @@
       width: 100%;
     }
     .container-illustration {
-      position: relative;
-      width: 100%;
-      height: 270px;
-      overflow: hidden;
-
+      height: 396px;
       .illustration-3 {
         &.zoom {
-          width: 100%;
-          object-fit: cover;
           object-position: 0 25%;
           transform: scale(2.8);
           margin-top: 25px;
@@ -71,9 +40,7 @@
     }
     .illustration-4 {
       &.zoom {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
+        height: 360px;
         object-position: 0 45%;
       }
     }

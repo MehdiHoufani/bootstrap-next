@@ -5,3 +5,19 @@
 @import "./signaletique-police/index";
 @import "./signaletique-portique/index";
 @import "./tottem/index";
+
+.spot {
+  z-index: 1;
+  position: absolute;
+  background-color: whitesmoke;
+  @include md-box-shadow(4);
+  h3 {
+    color: $theme-primary-color;
+    margin: 0;
+    padding: 22px 17px 22px 17px;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
