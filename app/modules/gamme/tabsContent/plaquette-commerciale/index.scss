@@ -1,2 +1,21 @@
 .tab-plaquette-commerciale {
+  .container-illustration-1 {
+    .container-illustration {
+      height: 352px;
+      .illustration {
+        &.zoom {
+          object-position: 0px -50px;
+        }
+      }
+    }
+  }
+  .container-illustration-2 {
+    padding-left: 40px;
+    .container-illustration {
+      .illustration {
+        &.zoom {
+        }
+      }
+    }
+  }
 }

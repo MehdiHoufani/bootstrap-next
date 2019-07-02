@@ -12,6 +12,17 @@
   }
   .section-2 {
     height: 900px;
+    .md-grid {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .section-2-2,
+    .section-2-3 {
+      height: 50%;
+      .md-cell {
+        margin-bottom: 0;
+      }
+    }
     .container-illustration-1 {
       .container-illustration {
         width: 100%;

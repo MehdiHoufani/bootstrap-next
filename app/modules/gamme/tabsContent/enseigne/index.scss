@@ -1,2 +1,30 @@
 .tab-enseigne {
+  .container-illustration-1 {
+    .container-illustration {
+      .illustration {
+        height: 352px;
+
+        &.zoom {
+          margin-top: -64px;
+          object-position: -5px 29px;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .container-illustration-2 {
+    padding-left: 40px;
+  }
+
+  .container-illustration-3 {
+    padding-right: 40px;
+  }
+
+  .section-2,
+  .section-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

@@ -3,11 +3,11 @@ import { Grid, Cell } from "react-md";
 
 import tabContent from "./tabsContent";
 
-class Gamme extends React.Component {
+class Gamme extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      tabActive: 1
+      tabActive: 0
     };
   }
 

@@ -1,2 +1,28 @@
 .tab-signaletique-police {
+  .container-illustration-1 {
+    .container-illustration {
+      height: 352px;
+      .illustration {
+        &.zoom {
+          object-position: 0px -200px;
+        }
+      }
+    }
+  }
+
+  .container-illustration-2,
+  .container-illustration-3,
+  .container-illustration-4 {
+    .container-illustration {
+      box-shadow: none;
+    }
+  }
+  .section-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      width: 150px;
+    }
+  }
 }
