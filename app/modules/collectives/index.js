@@ -7,7 +7,6 @@ const Collectives = () => (
   <Content>
     <Grid className={"page-collectivite"}>
       <Cell size={12}>
-        <div className={"fadedScroller_fade"} />
         <Grid>
           <Cell size={12}>
             <img

@@ -6,13 +6,42 @@ import BlockSlider from "../../components/blockSlider/blockSlider";
 const Home = () => (
   <Grid>
     <Cell size={4}>
-      <BlockSlider classNames={"right"} />
+      <BlockSlider
+        slides={[
+          {
+            url: "static/pictures/slides-collectivite/collectivite-1.jpg",
+            alt: " "
+          },
+          {
+            url: "static/pictures/slides-collectivite/collectivite-3.jpg",
+            alt: " "
+          },
+          {
+            url: "static/pictures/slides-collectivite/collectivite-4.jpg",
+            alt: " "
+          }
+        ]}
+      />
     </Cell>
     <Cell size={4}>
-      <BlockSlider />
+      <BlockSlider
+        slides={[
+          { url: "static/pictures/slides-promoteur/promoteur-1.jpg", alt: " " },
+          { url: "static/pictures/slides-promoteur/promoteur-2.jpg", alt: " " },
+          { url: "static/pictures/slides-promoteur/promoteur-3.jpg", alt: " " },
+          { url: "static/pictures/slides-promoteur/promoteur-4.jpg", alt: " " }
+        ]}
+      />
     </Cell>
-    <Cell size={4} classNames={"left"}>
-      <BlockSlider />
+    <Cell size={4}>
+      <BlockSlider
+        slides={[
+          { url: "static/pictures/slides-gamme/gamme-1.jpg", alt: " " },
+          { url: "static/pictures/slides-gamme/gamme-2.jpg", alt: " " },
+          { url: "static/pictures/slides-gamme/gamme-3.jpg", alt: " " },
+          { url: "static/pictures/slides-gamme/gamme-4.jpg", alt: " " }
+        ]}
+      />
     </Cell>
   </Grid>
 );

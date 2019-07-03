@@ -21,7 +21,8 @@ class Gamme extends React.PureComponent {
             {tabContent.map(({ name }, keyTab) => (
               <li key={keyTab}>
                 <button
-                  className={`button ${keyTab === tabActive && "active"}`}
+                  className={`theme-btn-primary ${keyTab === tabActive &&
+                    "active"}`}
                   onClick={() => this.setState(() => ({ tabActive: keyTab }))}
                 >
                   <h3>{name}</h3>
