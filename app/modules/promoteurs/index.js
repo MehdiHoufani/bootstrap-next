@@ -13,7 +13,7 @@ const Promoteurs = () => {
           <Grid>
             <Cell size={12}>
               <img
-                src={`${dirPath}promoteur-1.jpg`}
+                src={`${dirPath}promoteur-1-low.jpg`}
                 alt={""}
                 className={"illustration-1 zoom"}
               />
@@ -72,7 +72,7 @@ const Promoteurs = () => {
             </Cell>
             <Cell size={6}>
               <img
-                src={`${dirPath}promoteur-4.jpg`}
+                src={`${dirPath}promoteur-4-low.jpg`}
                 alt={""}
                 className={"illustration-4"}
               />

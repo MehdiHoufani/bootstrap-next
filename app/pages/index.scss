@@ -55,19 +55,19 @@ body {
   background-attachment: fixed;
 
   &.home {
-    background-image: url("#{$assetsPath}/pictures/background/bg-home.JPG");
+    background-image: url("#{$assetsPath}/pictures/background/bg-home-low.jpg");
   }
 
   &.collectivite {
-    background-image: url("#{$assetsPath}/pictures/background/bg-collective.jpg");
+    background-image: url("#{$assetsPath}/pictures/background/bg-collective-low.jpg");
   }
 
   &.promoteurs {
-    background-image: url("#{$assetsPath}/pictures/background/bg-promoteurs.jpg");
+    background-image: url("#{$assetsPath}/pictures/background/bg-promoteurs-low.jpg");
   }
 
   &.gamme {
-    background-image: url("#{$assetsPath}/pictures/background/bg-gamme.JPG");
+    background-image: url("#{$assetsPath}/pictures/background/bg-gamme-low.jpg");
   }
 }
 
