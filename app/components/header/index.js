@@ -1,9 +1,8 @@
-import React, { Fragment, Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Grid, Cell } from "react-md";
-import BlockSlider from "../../components/blockSlider/blockSlider";
 
-class Header extends Component {
+class Header extends PureComponent {
   handleChangePage = selectedPage => {
     const { onChangePage, currentPage } = this.props;
     if (selectedPage === currentPage) return;
