@@ -6,7 +6,7 @@ class ArrowApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
-    const md = new MobileDetect(ctx.req.header("user-agent"));
+    const md = new MobileDetect(ctx.req.header && ctx.req.header("user-agent"));
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
