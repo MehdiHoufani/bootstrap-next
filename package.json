@@ -27,6 +27,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "core-js": "^3.2.1",
     "express": "^4.17.1",
     "lodash.range": "^3.2.0",
     "mobile-detect": "^1.4.3",
