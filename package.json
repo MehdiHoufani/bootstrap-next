@@ -50,8 +50,7 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
     "acorn": "^7.0.0",
     "acorn-jsx": "^5.0.2",
     "babel-eslint": "^10.0.3",
@@ -60,9 +59,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "cross-env": "^5.2.0",
-    "eslint": "^6.2.2",
+    "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.1.0",
-    "eslint-config-react-app": "^5.0.1",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
@@ -70,7 +68,6 @@
     "postcss-css-variables": "^0.13.0",
     "prettier": "^1.18.2",
     "set-value": "^3.0.1",
-    "ts-pnp": "^1.1.4",
     "typescript": "^3.6.2"
   }
 }
