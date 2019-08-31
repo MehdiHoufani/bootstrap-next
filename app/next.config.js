@@ -5,6 +5,11 @@ const path = require("path");
 
 module.exports = withSass({
   distDir: "../build",
+  exportPathMap: function() {
+    return {
+      "/": { page: "/" }
+    };
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
     config.module.rules.push(
       ...[
