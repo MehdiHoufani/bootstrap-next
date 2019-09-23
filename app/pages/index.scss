@@ -1,4 +1,5 @@
 @import "../sass/react-md";
+@import "../sass/breakpoints";
 @import "../sass/theme";
 @import "../sass/fonts";
 @import "../components/index";
@@ -14,7 +15,9 @@ html {
 }
 
 body {
-  position: fixed;
+  @include tablet {
+    position: fixed;
+  }
 }
 
 #__next {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
 import PropTypes from "prop-types";
-import Header from "../header";
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class Navigation extends React.Component {
     const { onChangePage } = this.props;
     return (
       <Grid className={`navigation ${fixedNav ? "stick" : ""}`}>
-        <Cell size={4} className={"nav-item"}>
+        <Cell size={4} tabletSize={12} className={"nav-item"}>
           <button
             className={`theme-btn-primary ${this.isPageActive("collectivite")}`}
             onMouseUp={() => onChangePage("collectivite")}
@@ -39,7 +38,7 @@ class Navigation extends React.Component {
             <h3>solutions collectivités</h3>
           </button>
         </Cell>
-        <Cell size={4} className={"nav-item"}>
+        <Cell size={4} tabletSize={12} className={"nav-item"}>
           <button
             className={`theme-btn-primary ${this.isPageActive("promoteurs")}`}
             onMouseUp={() => onChangePage("promoteurs")}
@@ -47,9 +46,9 @@ class Navigation extends React.Component {
             <h3>solutions promoteurs</h3>
           </button>
         </Cell>
-        <Cell size={4} className={"nav-item"}>
+        <Cell size={4} tabletSize={12} className={"nav-item"}>
           <button
-            className={`theme-btn-primary left ${this.isPageActive("gamme")}`}
+            className={`theme-btn-primary ${this.isPageActive("gamme")}`}
             onMouseUp={() => onChangePage("gamme")}
           >
             <h3>la gamme</h3>
