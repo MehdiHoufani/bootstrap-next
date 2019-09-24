@@ -34,6 +34,13 @@ class Index extends Component {
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
+        <a
+          href={"mailto:contact@arrowdiff.fr"}
+          className={"theme-btn-primary contact"}
+        >
+          <i className="material-icons">email</i>
+          <h3>{"contact"}</h3>
+        </a>
 
         {currentPage === "home" && <Home />}
         {currentPage === "collectivite" && <Collectives />}

@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 
 class CrossPicture extends React.Component {
   render = () => {
-    return <div className={`background ${this.props.currentPage}`} />;
+    return (
+      <div className={"background-container"}>
+        <div className={`background ${this.props.currentPage}`} />
+      </div>
+    );
   };
 }
 

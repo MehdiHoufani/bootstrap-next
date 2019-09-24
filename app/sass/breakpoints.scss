@@ -1,0 +1,32 @@
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$md-grid-tablet-breakpoint: 600px;
+
+// Tablets and small desktops
+$md-grid-desktop-breakpoint: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$md-grid-desktop-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$md-grid-tablet-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$md-grid-tablet-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin tablet-phone {
+  @media (max-width: #{$md-grid-desktop-breakpoint}) {
+    @content;
+  }
+}
+

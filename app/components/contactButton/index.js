@@ -11,10 +11,10 @@ import { Button, SVGIcon } from "react-md";
 const MAIN_BUTTON_DIAM = 90;
 const CHILD_BUTTON_DIAM = 48;
 // The number of child buttons that fly out from the main button
-const NUM_CHILDREN = 5;
+const NUM_CHILDREN = 3;
 // Hard code the position values of the mainButton
-const M_X = 1200;
-const M_Y = 800;
+const M_X = 0;
+const M_Y = 0;
 
 //should be between 0 and 0.5 (its maximum value is difference between scale in finalChildButtonStyles a
 // nd initialChildButtonStyles)

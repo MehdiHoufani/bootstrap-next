@@ -1,4 +1,9 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+
+@import '~material-icons/iconfont/material-icons.scss';
+
 @import "../sass/react-md";
+@import "../sass/breakpoints";
 @import "../sass/theme";
 @import "../sass/fonts";
 @import "../components/index";
@@ -14,7 +19,9 @@ html {
 }
 
 body {
-  position: fixed;
+  @include tablet {
+    position: fixed;
+  }
 }
 
 #__next {
@@ -40,6 +47,16 @@ body {
   height: 100%;
 }
 
+.background-container {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(0.5);
+}
+
 .background {
   position: fixed;
   z-index: 0;
@@ -53,6 +70,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+
+  transition: all 0.8s;
 
   &.home {
     background-image: url("#{$assetsPath}/pictures/background/bg-home-low.jpg");
@@ -68,6 +87,33 @@ body {
 
   &.gamme {
     background-image: url("#{$assetsPath}/pictures/background/bg-gamme-low.jpg");
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  z-index: 100;
+  .material-icons {
+    color: black;
+    padding: 10px;
+    font-size: 32px;
+  }
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  right: -150px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  height: 70px;
+  width: 200px;
+  transition: all 1s;
+  &:hover {
+    right: 0;
   }
 }
 

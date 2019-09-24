@@ -30,6 +30,7 @@ module.exports = withSass({
             loader: "url-loader",
             options: {
               limit: 100000
+
             }
           }
         }

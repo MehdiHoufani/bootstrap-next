@@ -31,7 +31,7 @@ class Gamme extends React.PureComponent {
             ))}
           </ul>
         </Cell>
-        <Cell size={10} className={"tabContainer"}>
+        <Cell size={9} className={"tabContainer"}>
           <Content />
         </Cell>
       </Grid>
