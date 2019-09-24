@@ -1,7 +1,15 @@
 @import "~react-responsive-carousel/lib/styles/carousel.css";
 
 .block-carousel {
+  .carousel-slider {
+    height: 309px;
+  }
   img {
-    height: 370px;
+    width: 100%;
+    height: auto;
+  }
+
+  @include phone {
+    display: none;
   }
 }

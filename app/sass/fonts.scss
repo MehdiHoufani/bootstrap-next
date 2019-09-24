@@ -14,6 +14,16 @@ $assetsPath: "/static";
     format("truetype");
 }
 
+$material-icons-codepoints: () !default; /* Sass map of icon names and codepoints */
+$material-icons-font-path: '' !default;
+$material-icons-font-name: 'MaterialIcons-Regular' !default;
+$material-icons-font-size: 24px !default;
+$material-icons-font-family: 'Material Icons' !default;
+
+.material-icons {
+  @include material-icons();
+}
+
 h2 {
   font-size: 32px;
   white-space: normal;

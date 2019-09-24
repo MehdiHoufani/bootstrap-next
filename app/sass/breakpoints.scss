@@ -24,3 +24,9 @@ $md-grid-desktop-breakpoint: 840px;
   }
 }
 
+@mixin tablet-phone {
+  @media (max-width: #{$md-grid-desktop-breakpoint}) {
+    @content;
+  }
+}
+

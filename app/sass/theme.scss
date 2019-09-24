@@ -1,34 +1,26 @@
-$theme-primary-color: $md-orange-700;
-$theme-secondary-color: #132257;
-
+$theme-primary-color: $md-orange-600;
+$theme-secondary-color: #3c3c3b;
 $theme-primary-font: earthorbiter;
 
 .theme-btn-primary {
+  cursor: pointer;
   width: 100%;
-  padding: 0;
+  padding: 15px 0 15px 0;
   border-radius: 5px;
   border: solid 2px whitesmoke;
-  background-color: $md-orange-700;
+  background-color: $theme-primary-color;
+  transition: all 0.2s ease-in-out;
+  outline: none;
   @include md-box-shadow(5);
-  :hover {
-    h2::first-letter {
-      color: $md-orange-700;
-    }
-    h3::first-letter {
-      color: $md-orange-700;
-    }
-  }
   h2,
   h3 {
     color: whitesmoke;
-    line-height: 70px;
+    line-height: 40px;
     font-family: $theme-primary-font;
     font-size: 22px;
     margin-bottom: 0;
   }
-  h2::first-letter {
-    color: black;
-  }
+  h2,
   h3::first-letter {
     color: black;
   }
@@ -40,8 +32,16 @@ $theme-primary-font: earthorbiter;
       color: $theme-primary-color;
     }
   }
+  :hover {
+    h2,
+    h3::first-letter {
+      color: $theme-primary-color;
+    }
+  }
 }
 
-.theme-btn-primary:hover {
-  background-color: $theme-secondary-color;
+.theme-btn-primary:not(.active):hover {
+  background-color: $md-orange-700;
+  transform: scale(1.02);
+  z-index: 3;
 }
