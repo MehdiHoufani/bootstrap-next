@@ -29,11 +29,18 @@ class Index extends Component {
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
-
         <Navigation
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
         />
+        <a
+          href={"./static/documents/gamme-arrow.pdf"}
+          className={"theme-btn-primary download"}
+          download={"gamme arrow"}
+        >
+          <i className="material-icons">get_app</i>
+          <h3>{"documentation"}</h3>
+        </a>
         <a
           href={"mailto:contact@arrowdiff.fr"}
           className={"theme-btn-primary contact"}

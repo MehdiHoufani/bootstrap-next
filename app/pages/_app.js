@@ -7,7 +7,6 @@ class ArrowApp extends App {
     let pageProps = {};
     let md = { mobile: () => null };
 
-
     if (typeof ctx.req.header === "function") {
       md = new MobileDetect(ctx.req.header("user-agent"));
     }

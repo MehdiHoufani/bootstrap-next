@@ -8,10 +8,9 @@ class Slide extends React.Component {
     return (
       <div>
         <div className={"block-slider-picture"}>
-          <img
-            src={!url ? "https://via.placeholder.com/350x336" : url}
-            alt={alt}
-          />
+          <div className={"container-illustration"}>
+            <img className={"image"} src={url} alt={alt} />
+          </div>
         </div>
       </div>
     );
@@ -23,7 +22,7 @@ Slide.propTypes = {
   alt: PropTypes.string
 };
 Slide.defaultProps = {
-  url: "./static/conceptCollectivité1.jpg",
+  url: "https://via.placeholder.com/350x336",
   alt: ""
 };
 
