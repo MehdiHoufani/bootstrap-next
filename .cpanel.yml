@@ -5,4 +5,4 @@ deployement:
     - export BUILDPATH=/app/out/
     - npm install
     - npm run build
-    - cp -R $BUILDPATH $DEPLOYPATH
+    - /bin/cp -R $BUILDPATH $DEPLOYPATH
