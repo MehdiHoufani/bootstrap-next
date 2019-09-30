@@ -4,7 +4,7 @@ const withSass = require("@zeit/next-sass");
 const path = require("path");
 
 module.exports = withSass({
-  distDir: "../build",
+  distDir: "build",
   exportPathMap: function() {
     return {
       "/": { page: "/" }
@@ -30,7 +30,6 @@ module.exports = withSass({
             loader: "url-loader",
             options: {
               limit: 100000
-
             }
           }
         }

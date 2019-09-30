@@ -20,6 +20,7 @@ class Index extends Component {
   handleChangePage = currentPage => {
     this.setState({ currentPage });
   };
+
   renderDesktop = () => {
     const { currentPage } = this.state;
     return (

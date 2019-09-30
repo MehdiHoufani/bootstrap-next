@@ -36,7 +36,7 @@ module.exports = {
     semi: ["error", "always"],
     "no-unused-vars": "off",
     "no-console": "off",
-    format_on_save: true
+    "format_on_save": 0
   },
   settings: {
     react: {

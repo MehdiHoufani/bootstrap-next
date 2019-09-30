@@ -5,7 +5,7 @@ const { parse } = require("url");
 
 const dev = process.env.NODE_ENV !== "production";
 const port = parseInt(process.env.PORT, 10) || 3000;
-const nextApp = next({ dev: true, dir: "app" });
+const nextApp = next({ dev, dir: "app" });
 const handle = nextApp.getRequestHandler();
 
 nextApp.prepare().then(() => {
@@ -20,6 +20,7 @@ nextApp.prepare().then(() => {
 
   app.listen(port, err => {
     if (err) throw err;
+    console.log("process", process.env.NODE_ENV);
     console.log(
       `App started env: ${process.env.NODE_ENV ||
         " dev"} > Ready on port: ${port}`

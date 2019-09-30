@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import MobileDetect from "mobile-detect";
 
 class ArrowApp extends App {
@@ -20,11 +20,7 @@ class ArrowApp extends App {
 
   render() {
     const { Component, pageProps, isMobile } = this.props;
-    return (
-      <Container>
-        <Component {...pageProps} isMobile={isMobile} />
-      </Container>
-    );
+    return <Component {...pageProps} isMobile={isMobile} />;
   }
 }
 

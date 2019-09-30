@@ -17,10 +17,10 @@
     "clean:build": "rm -rf build && rm -rf app/out",
     "build:next": "cross-env NODE_ENV=production next build app",
     "test": "test",
-    "dev": "cross-env NODE_ENV=development && npm cache clean --force && node server/main.js",
+    "dev": "cross-env NODE_ENV=development node server/main.js",
     "build": "next build app && next export app",
-    "start": "cross-env NODE_ENV=production && node server/main.js",
-    "start:optim": "cross-env NODE_ENV=production && node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server/main.js"
+    "start": "cross-env NODE_ENV=production node server/main.js",
+    "start:optim": "cross-env NODE_ENV=production node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server/main.js"
   },
   "author": "mehdi houfani",
   "license": "ISC",
@@ -42,7 +42,7 @@
     "react-motion": "^0.5.2",
     "react-responsive-carousel": "^3.1.50",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.1.1",
+    "react-scripts": "^3.0.1",
     "styled-components": "^4.3.2",
     "webfontloader": "^1.6.28"
   },

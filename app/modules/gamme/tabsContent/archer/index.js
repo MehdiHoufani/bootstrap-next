@@ -29,6 +29,7 @@ const Archer = () => (
       </p>
       <br />
       <p>
+        {/* eslint-disable-next-line max-len */}
         Il y a plusieurs facteurs à cela, notamment l’inatention des conducteurs
         ainsi que celle des piétons. Dans tous les cas il faut pouvoir convenir
         d’un dispositif répondant aux besoins de chacun.

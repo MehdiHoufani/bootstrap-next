@@ -1,5 +1,5 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <html lang={"fr"}>
+      <Html lang={"fr"}>
         <Head>
           <meta
             name="viewport"
@@ -20,7 +20,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

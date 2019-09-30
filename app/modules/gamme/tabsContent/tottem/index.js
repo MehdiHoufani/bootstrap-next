@@ -16,6 +16,7 @@ const Tottem = () => (
     </Cell>
     <Cell size={12} className={"paragraph"}>
       <p>
+        {/* eslint-disable-next-line max-len */}
         Notre totem QUIVER a été développé pour une lecture d&#39;informations
         rapide et efficace des pôles d’intérêts des communes mais également
         accroitre la visibilité des entreprises. Ses dimensions et son design
@@ -46,6 +47,7 @@ const Tottem = () => (
               </p>
               <br />
               <p>
+                {/* eslint-disable-next-line max-len */}
                 Nous somme en mesure également de vous proposer les totems plats
                 ou galbés, éclairés ou non.
               </p>
@@ -54,6 +56,7 @@ const Tottem = () => (
                 L&#39;équipe de conception ARROW est capable de vous proposer
                 des structures{" "}
                 <span className={"text-color-theme"}>sur mesure</span> selon vos
+                {/* eslint-disable-next-line max-len */}
                 images, vos envies. Nous mettons tout en oeuvre pour répondre à
                 vos attentes.
               </p>

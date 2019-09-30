@@ -50,6 +50,7 @@ const SignaletiquePolice = () => (
       </p>
       <p>
         - Produit de sécurité routière avant tout, la gamme de panneaux de
+        {/* eslint-disable-next-line max-len */}
         signalisation ARROW bénéficie d’une conception de type monobloc qui lui
         confère robustesse et sécurité.
       </p>
