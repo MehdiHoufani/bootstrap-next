@@ -35,8 +35,8 @@ module.exports = {
     "max-len": ["warn", { code: 80, ignoreUrls: true }],
     semi: ["error", "always"],
     "no-unused-vars": "off",
-    "no-console": "off",
-    "format_on_save": 0
+    "no-console": process.env.NODE_ENV === "production" ? 2 : 0,
+    format_on_save: 0
   },
   settings: {
     react: {
