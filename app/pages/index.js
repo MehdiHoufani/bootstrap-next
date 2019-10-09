@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { Grid, Cell } from "react-md";
 import "./index.scss";
 
-import Header from "../components/header";
-import Navigation from "../components/navigation";
-import CrossPicture from "../components/crossPicture";
+import Header from "components/header";
+import Navigation from "components/navigation";
+import CrossPicture from "components/crossPicture";
 
-import Home from "../modules/home";
-import Collectives from "../modules/collectives";
-import Promoteurs from "../modules/promoteurs";
-import Gamme from "../modules/gamme";
+import Home from "modules/home";
+import Collectives from "modules/collectives";
+import Promoteurs from "modules/promoteurs";
+import Gamme from "modules/gamme";
 
 class Index extends Component {
   state = {

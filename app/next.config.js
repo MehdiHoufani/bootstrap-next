@@ -23,6 +23,7 @@ module.exports = withProgressbar({
           chunkFilename: dev ? "[id].css" : "[id].[hash].css"
         })
       );
+
       config.module.rules.push(
         ...[
           {

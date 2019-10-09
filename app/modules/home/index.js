@@ -1,12 +1,13 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
 
-import BlockSlider from "../../components/blockSlider/blockSlider";
+import BlockSlider from "components/blockSlider/blockSlider";
 
 const Home = () => (
   <Grid>
     <Cell size={4} tabletSize={12}>
       <BlockSlider
+        key={1}
         slides={[
           {
             url: "static/pictures/slides-collectivite/collectivite-1.jpg",
@@ -25,6 +26,7 @@ const Home = () => (
     </Cell>
     <Cell size={4} tabletSize={12}>
       <BlockSlider
+        key={2}
         slides={[
           { url: "static/pictures/slides-promoteur/promoteur-1.jpg", alt: " " },
           { url: "static/pictures/slides-promoteur/promoteur-2.jpg", alt: " " },
@@ -35,6 +37,7 @@ const Home = () => (
     </Cell>
     <Cell size={4} tabletSize={12}>
       <BlockSlider
+        key={3}
         slides={[
           { url: "static/pictures/slides-gamme/gamme-1.jpg", alt: " " },
           { url: "static/pictures/slides-gamme/gamme-2.jpg", alt: " " },

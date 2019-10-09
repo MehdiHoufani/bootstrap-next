@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { Grid, Cell } from "react-md";
 import { Carousel } from "react-responsive-carousel";
 
 import Slide from "./slide";
@@ -10,14 +9,20 @@ class BlockSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slideIdx: 1
+      slideIdx: 1,
+      isRender: true
     };
   }
 
+  componentDidMount() {
+    this.setState({ isRender: false });
+  }
+
   render() {
+    if (this.state.isRender) return null;
     const { text, classNames, slides, settings } = this.props;
     return (
-      <div className={`block-carousel ${classNames}`}>
+      <div className={`block-carousel ${classNames || ""}`}>
         <button onMouseUp={this.props.onMouseUp}>
           <Carousel {...settings}>
             {slides.map((slide, index) => (
