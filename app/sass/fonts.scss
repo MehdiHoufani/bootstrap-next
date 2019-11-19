@@ -27,16 +27,25 @@ $material-icons-font-family: 'Material Icons' !default;
 h2 {
   font-size: 32px;
   white-space: normal;
+  @include phone {
+    font-size: 22px;
+  }
 }
 
 h3 {
   font-size: 26px;
   white-space: normal;
+  @include phone {
+    font-size: 20px;
+  }
 }
 
 p {
   font-size: 20px;
   line-height: 1.5;
+  @include phone {
+    font-size: 17px;
+  }
 }
 
 .bold {

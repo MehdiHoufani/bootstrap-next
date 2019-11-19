@@ -33,6 +33,9 @@
       color: whitesmoke;
       font-size: 40px;
       font-weight: bold;
+      @include phone {
+        font-size: 22px;
+      }
     }
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.28),
       0 3px 15px 0 rgba(0, 0, 0, 0.24), 0 9px 3px -6px rgba(0, 0, 0, 0.2);

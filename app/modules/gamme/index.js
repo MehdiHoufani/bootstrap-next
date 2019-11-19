@@ -1,13 +1,12 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
 import PropTypes from "prop-types";
-
 import tabContent from "./tabsContent";
 
 const Gamme = ({ onChangeTab, tabSelect, showTabList }) => {
   const { Content } = tabContent[tabSelect];
   return (
-    <Grid className={"gamme"}>
+    <Grid className={"page-gamme"}>
       {showTabList && (
         <Cell size={2} className={"tabList"}>
           <ul>

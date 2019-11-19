@@ -7,11 +7,14 @@ import Header from "components/header";
 import Navigation from "components/navigation";
 import CrossPicture from "components/crossPicture";
 import MenuLateral from "components/menuLateral";
+import Content from "../containers/content";
 
 import Home from "modules/home";
 import Collectives from "modules/collectives";
 import Promoteurs from "modules/promoteurs";
 import Gamme from "modules/gamme";
+import GalleryPicture from "modules/galleryPictures";
+
 import { breakpoints } from "utils";
 
 class Index extends Component {
@@ -19,7 +22,7 @@ class Index extends Component {
     currentPage: "home",
     tabSelect: 0,
     isMobile: breakpoints().isMobile,
-    isMenuOpen: true
+    isMenuOpen: false
   };
 
   componentDidMount() {
@@ -41,7 +44,7 @@ class Index extends Component {
   };
 
   renderDesktop = () => {
-    const { currentPage, isMobile } = this.state;
+    const { currentPage, isMobile, tabSelect } = this.state;
     return (
       <React.Fragment>
         <CrossPicture currentPage={currentPage} />
@@ -60,6 +63,8 @@ class Index extends Component {
                 isMenuOpen: false
               })
             }
+            currentPage={currentPage}
+            currentTab={tabSelect}
             isOpen={this.state.isMenuOpen}
           />
         )}
@@ -78,34 +83,38 @@ class Index extends Component {
             onChangePage={this.handleChangePage}
           />
         )}
-        <a
-          href={"./static/documents/gamme-arrow.pdf"}
-          className={"theme-btn-primary download"}
-          download={"gamme arrow"}
-        >
-          <i className="material-icons">get_app</i>
-          <h3>{"documentation"}</h3>
-        </a>
-        <a
-          href={"mailto:contact@arrowdiff.fr"}
-          className={"theme-btn-primary contact"}
-        >
-          <i className="material-icons">email</i>
-          <h3>{"contact"}</h3>
-        </a>
-
-        {currentPage === "home" && <Home />}
-        {currentPage === "collectivite" && <Collectives />}
-        {currentPage === "promoteurs" && <Promoteurs />}
-        {currentPage === "gamme" && (
-          <Gamme
-            onChangeTab={tabSelected => {
-              this.setState({ tabSelect: tabSelected });
-            }}
-            tabSelect={this.state.tabSelect}
-            showTabList={!isMobile}
-          />
-        )}
+        <div className={"block-content"}>
+          <a
+            href={"./static/documents/gamme-arrow.pdf"}
+            className={"theme-btn-primary download"}
+            download={"gamme arrow"}
+          >
+            <i className="material-icons">get_app</i>
+            <h3>{"documentation"}</h3>
+          </a>
+          <a
+            href={"mailto:contact@arrowdiff.fr"}
+            className={"theme-btn-primary contact"}
+          >
+            <i className="material-icons">email</i>
+            <h3>{"contact"}</h3>
+          </a>
+        </div>
+        <Content>
+          {currentPage === "home" && <Home isMobile={isMobile} />}
+          {currentPage === "collectivite" && <Collectives />}
+          {currentPage === "promoteurs" && <Promoteurs />}
+          {currentPage === "gamme" && (
+            <Gamme
+              onChangeTab={tabSelected => {
+                this.setState({ tabSelect: tabSelected });
+              }}
+              tabSelect={this.state.tabSelect}
+              showTabList={!isMobile}
+            />
+          )}
+          {currentPage === "slider" && <GalleryPicture />}
+        </Content>
       </React.Fragment>
     );
   };

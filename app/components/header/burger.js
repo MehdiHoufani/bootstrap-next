@@ -12,6 +12,7 @@ export const Burger = ({ onClick, isOpen }) => (
       <div className={"bar"} />
       <div className={"bar"} />
     </button>
+    <p>MENU</p>
   </div>
 );
 

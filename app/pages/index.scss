@@ -1,6 +1,6 @@
-$material-icons-font-path: '~material-icons/iconfont/';
+$material-icons-font-path: "~material-icons/iconfont/";
 
-@import '~material-icons/iconfont/material-icons.scss';
+@import "~material-icons/iconfont/material-icons.scss";
 
 @import "../sass/react-md";
 @import "../sass/breakpoints";
@@ -10,6 +10,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import "../modules/collectives/index";
 @import "../modules/promoteurs/index";
 @import "../modules/gamme/index";
+@import "../modules/home/index";
 
 body,
 html {
@@ -19,9 +20,7 @@ html {
 }
 
 body {
-  @include tablet {
-    position: fixed;
-  }
+  overflow: hidden;
 }
 
 #__next {
@@ -44,7 +43,12 @@ body {
   position: relative;
   z-index: 1;
   overflow: scroll;
-  height: 100%;
+  @include phone {
+    margin-top: 110px;
+    padding: 0;
+    position: fixed;
+    height: calc(100% - 110px);
+  }
 }
 
 .background-container {
@@ -88,6 +92,10 @@ body {
   &.gamme {
     background-image: url("#{$assetsPath}/pictures/background/bg-gamme-low.jpg");
   }
+
+  &.slider {
+    background-color: #585857;
+  }
 }
 
 .contact {
@@ -96,14 +104,17 @@ body {
   justify-content: left;
   align-items: center;
   z-index: 20;
+
   .material-icons {
     color: black;
     padding: 10px 20px 10px 10px;
     font-size: 32px;
   }
-  h3{
+
+  h3 {
     font-size: 16px;
   }
+
   text-decoration: none;
   text-align: center;
   position: absolute;
@@ -115,46 +126,54 @@ body {
   height: 70px;
   width: 200px;
   transition: all 1s;
-  &:hover {
-    right: 0;
+  @include tablet {
+    &:hover {
+      right: 0;
+    }
   }
 }
 
 .download {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    z-index: 20;
-    .material-icons {
-      color: black;
-      padding: 10px;
-      font-size: 32px;
-    }
-    h3{
-      font-size: 14px;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  z-index: 20;
 
-    text-decoration: none;
-    text-align: center;
-    position: absolute;
-    bottom: 130px;
-    right: -150px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
-    height: 70px;
-    width: 200px;
-    transition: all 1s;
+  .material-icons {
+    color: black;
+    padding: 10px;
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+  bottom: 130px;
+  right: -150px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  height: 70px;
+  width: 200px;
+  transition: all 1s;
+  @include tablet {
     &:hover {
       right: 0;
     }
-
+  }
 }
 
 .scrollable-content {
   height: calc(650px + 60px);
   overflow-y: auto;
+  @include phone {
+    height: 100%;
+  }
 }
 
 .fadedScroller_fade {
