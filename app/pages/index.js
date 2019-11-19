@@ -6,15 +6,34 @@ import "./index.scss";
 import Header from "components/header";
 import Navigation from "components/navigation";
 import CrossPicture from "components/crossPicture";
+import MenuLateral from "components/menuLateral";
 
 import Home from "modules/home";
 import Collectives from "modules/collectives";
 import Promoteurs from "modules/promoteurs";
 import Gamme from "modules/gamme";
+import { breakpoints } from "utils";
 
 class Index extends Component {
   state = {
-    currentPage: "home"
+    currentPage: "home",
+    tabSelect: 0,
+    isMobile: breakpoints().isMobile,
+    isMenuOpen: true
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.listenResize);
+    this.setState({ isMobile: breakpoints().isMobile });
+  }
+
+  listenResize = () => {
+    const { isMobile } = breakpoints();
+    if (this.state.isMobile !== isMobile) this.setState({ isMobile });
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.listenResize);
   };
 
   handleChangePage = currentPage => {
@@ -22,18 +41,43 @@ class Index extends Component {
   };
 
   renderDesktop = () => {
-    const { currentPage } = this.state;
+    const { currentPage, isMobile } = this.state;
     return (
       <React.Fragment>
         <CrossPicture currentPage={currentPage} />
+        {isMobile && (
+          <MenuLateral
+            onClose={() => {
+              this.setState({ isMenuOpen: false });
+            }}
+            onChange={page =>
+              this.setState({ currentPage: page, isMenuOpen: false })
+            }
+            onChangeTab={tabActived =>
+              this.setState({
+                currentPage: "gamme",
+                tabSelect: tabActived,
+                isMenuOpen: false
+              })
+            }
+            isOpen={this.state.isMenuOpen}
+          />
+        )}
         <Header
           currentPage={currentPage}
           onChangePage={this.handleChangePage}
+          isMobile={isMobile}
+          onChangeBurger={() => {
+            this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
+          }}
+          isBurgerOpen={this.state.isMenuOpen}
         />
-        <Navigation
-          currentPage={currentPage}
-          onChangePage={this.handleChangePage}
-        />
+        {!isMobile && (
+          <Navigation
+            currentPage={currentPage}
+            onChangePage={this.handleChangePage}
+          />
+        )}
         <a
           href={"./static/documents/gamme-arrow.pdf"}
           className={"theme-btn-primary download"}
@@ -53,7 +97,15 @@ class Index extends Component {
         {currentPage === "home" && <Home />}
         {currentPage === "collectivite" && <Collectives />}
         {currentPage === "promoteurs" && <Promoteurs />}
-        {currentPage === "gamme" && <Gamme />}
+        {currentPage === "gamme" && (
+          <Gamme
+            onChangeTab={tabSelected => {
+              this.setState({ tabSelect: tabSelected });
+            }}
+            tabSelect={this.state.tabSelect}
+            showTabList={!isMobile}
+          />
+        )}
       </React.Fragment>
     );
   };

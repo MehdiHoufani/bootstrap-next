@@ -27,7 +27,7 @@ class Navigation extends React.Component {
 
   render = () => {
     const { fixedNav } = this.state;
-    const { onChangePage } = this.props;
+    const { onChangePage, isMobile } = this.props;
     return (
       <Grid className={`navigation ${fixedNav ? "stick" : ""}`}>
         <Cell size={4} tabletSize={12} className={"nav-item"}>
@@ -61,12 +61,14 @@ class Navigation extends React.Component {
 
 Navigation.propTypes = {
   currentPage: PropTypes.string,
-  onChangePage: PropTypes.func
+  onChangePage: PropTypes.func,
+  isMobile: PropTypes.boolean
 };
 
 Navigation.defaultProps = {
   currentPage: null,
-  onChangePage: () => null
+  onChangePage: () => null,
+  isMobile: false
 };
 
 export default Navigation;

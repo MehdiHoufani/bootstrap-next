@@ -1,29 +1,22 @@
 import React from "react";
 import { Grid, Cell } from "react-md";
+import PropTypes from "prop-types";
 
 import tabContent from "./tabsContent";
 
-class Gamme extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tabActive: 0
-    };
-  }
-
-  render = () => {
-    const { tabActive } = this.state;
-    const { Content } = tabContent[tabActive];
-    return (
-      <Grid className={"gamme"}>
+const Gamme = ({ onChangeTab, tabSelect, showTabList }) => {
+  const { Content } = tabContent[tabSelect];
+  return (
+    <Grid className={"gamme"}>
+      {showTabList && (
         <Cell size={2} className={"tabList"}>
           <ul>
             {tabContent.map(({ name }, keyTab) => (
               <li key={keyTab}>
                 <button
-                  className={`theme-btn-primary ${keyTab === tabActive &&
+                  className={`theme-btn-primary ${keyTab === tabSelect &&
                     "active"}`}
-                  onClick={() => this.setState(() => ({ tabActive: keyTab }))}
+                  onClick={() => onChangeTab(keyTab)}
                 >
                   <h3>{name}</h3>
                 </button>
@@ -31,12 +24,24 @@ class Gamme extends React.PureComponent {
             ))}
           </ul>
         </Cell>
-        <Cell size={9} className={"tabContainer"}>
-          <Content />
-        </Cell>
-      </Grid>
-    );
-  };
-}
+      )}
+      <Cell size={9} className={"tabContainer"}>
+        <Content />
+      </Cell>
+    </Grid>
+  );
+};
+
+Gamme.propTypes = {
+  tabSelect: PropTypes.string,
+  onChangeTab: PropTypes.func,
+  showTabList: PropTypes.boolean
+};
+
+Gamme.defaultProps = {
+  tabSelect: null,
+  onChangeTab: () => {},
+  showTabList: true
+};
 
 export default Gamme;
