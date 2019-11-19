@@ -1,10 +1,14 @@
 .tab-signaletique-police {
   .container-illustration-1 {
     .container-illustration {
-      height: 352px;
+      @include tablet {
+        height: 352px;
+      }
       .illustration {
         &.zoom {
-          object-position: 0px -200px;
+          @include tablet {
+            object-position: 0px -200px;
+          }
         }
       }
     }

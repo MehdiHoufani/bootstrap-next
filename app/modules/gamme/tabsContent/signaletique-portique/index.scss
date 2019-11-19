@@ -1,12 +1,16 @@
 .tab-signaletique-portique {
   .container-illustration-1 {
     .container-illustration {
-      height: 352px;
+      @include tablet {
+        height: 352px;
+      }
       .illustration-1 {
         &.zoom {
-          margin-top: -117px;
-          object-position: 50px -0px;
-          transform: rotate(-20deg) scale(1.2);
+          @include tablet {
+            margin-top: -117px;
+            object-position: 50px -0px;
+            transform: rotate(-20deg) scale(1.2);
+          }
         }
       }
     }

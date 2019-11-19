@@ -54,7 +54,8 @@ const PlaquetteCommerciale = () => (
         et délivrer un message efficace. Elle doit être une présentation
         valorisant votre entreprise et les services que vous proposez.
       </p>
-      <br />
+    </Cell>
+    <Cell size={12} className={"paragraph"}>
       <p>
         Une plaquette commerciale ontruite vous permettra de démarcher des
         <span className={"text-color-theme"}> prospects sérieux</span>, de

@@ -13,10 +13,14 @@
       font-style: normal;
     }
     .container-illustration {
-      height: 600px;
+      @include tablet {
+        height: 600px;
+      }
       .illustration-2 {
         &.zoom {
-          height: 600px;
+          @include tablet {
+            height: 600px;
+          }
           object-position: 0 0;
         }
       }

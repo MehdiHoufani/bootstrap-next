@@ -2,12 +2,15 @@
   .container-illustration-1 {
     .container-illustration {
       .illustration {
-        height: 352px;
-
+        @include tablet {
+          height: 352px;
+        }
         &.zoom {
-          margin-top: -64px;
-          object-position: -5px 29px;
-          transform: scale(1.1);
+          @include tablet {
+            margin-top: -64px;
+            object-position: -5px 29px;
+            transform: scale(1.1);
+          }
         }
       }
     }

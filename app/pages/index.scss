@@ -43,6 +43,7 @@ body {
   position: relative;
   z-index: 1;
   overflow: scroll;
+  height: calc(100% - 268px);
   @include phone {
     margin-top: 110px;
     padding: 0;
@@ -169,8 +170,8 @@ body {
 }
 
 .scrollable-content {
-  height: calc(650px + 60px);
-  overflow-y: auto;
+  height: 100%;
+  overflow: hidden;
   @include phone {
     height: 100%;
   }

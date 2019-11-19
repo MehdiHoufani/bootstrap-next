@@ -1,6 +1,14 @@
 .page-gamme {
   height: 100%;
+  @include phone {
+    padding: 0;
+  }
   .tabList {
+    height: 100%;
+    overflow-y: scroll;
+    @include phone {
+      padding: 0;
+    }
     z-index: 1;
     ul {
       list-style-type: none;
@@ -22,7 +30,10 @@
     z-index: 1;
     background-color: whitesmoke;
     overflow-y: scroll;
-    height: 70%;
+    height: 100%;
+    @include phone {
+      padding: 0;
+    }
     @include md-box-shadow(5);
     @import "./tabsContent/index";
   }

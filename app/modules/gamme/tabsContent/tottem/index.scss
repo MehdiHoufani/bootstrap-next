@@ -1,12 +1,16 @@
 .tab-tottem {
   .container-illustration {
-    height: 450px;
+    @include tablet {
+      height: 450px;
+    }
     .illustration-1 {
       &.zoom {
-        height: 450px;
-        object-position: 0 25%;
-        transform: scale(1.2);
-        margin-left: -80px;
+        @include tablet {
+          height: 450px;
+          object-position: 0 25%;
+          transform: scale(1.2);
+          margin-left: -80px;
+        }
       }
     }
   }
