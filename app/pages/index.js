@@ -21,13 +21,15 @@ class Index extends Component {
   state = {
     currentPage: "home",
     tabSelect: 0,
-    isMobile: breakpoints().isMobile,
-    isMenuOpen: false
+    isMobile: false,
+    isMenuOpen: false,
+    isFirstRender: true
   };
 
   componentDidMount() {
     window.addEventListener("resize", this.listenResize);
-    this.setState({ isMobile: breakpoints().isMobile });
+    this.setState({ isFirstRender: false });
+    this.listenResize();
   }
 
   listenResize = () => {
@@ -43,8 +45,9 @@ class Index extends Component {
     this.setState({ currentPage });
   };
 
-  renderDesktop = () => {
-    const { currentPage, isMobile, tabSelect } = this.state;
+  render = () => {
+    const { currentPage, isMobile, tabSelect, isFirstRender } = this.state;
+    if (isFirstRender) return null;
     return (
       <React.Fragment>
         <CrossPicture currentPage={currentPage} />
@@ -118,29 +121,6 @@ class Index extends Component {
       </React.Fragment>
     );
   };
-
-  renderMobile = () => {
-    return (
-      <React.Fragment>
-        <Header />
-        <Grid>
-          <Cell size={12}>
-            <h3>site mobile</h3>
-            <h3>en construction</h3>
-          </Cell>
-        </Grid>
-      </React.Fragment>
-    );
-  };
-
-  render() {
-    const { isMobile } = this.props;
-    return (
-      <React.Fragment>
-        {!isMobile ? this.renderDesktop() : this.renderMobile()}
-      </React.Fragment>
-    );
-  }
 }
 
 Index.propTypes = {
