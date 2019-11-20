@@ -33,6 +33,8 @@
     height: 100%;
     @include phone {
       padding: 0;
+      margin: 0;
+      width: 100%;
     }
     @include md-box-shadow(5);
     @import "./tabsContent/index";

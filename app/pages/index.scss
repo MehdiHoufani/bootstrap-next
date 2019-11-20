@@ -203,6 +203,9 @@ body {
   overflow: hidden;
   width: 100%;
   @include md-box-shadow(2);
+  @include phone {
+    height: 97%;
+  }
 }
 .zoom {
   width: 100%;

@@ -23,17 +23,21 @@
   }
   .section-2 {
     position: relative;
-    .spot {
-      margin-left: 100px;
-      padding-left: 50px;
-      padding-right: 50px;
+    @include tablet {
+      .spot {
+        margin-left: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
     }
     .illustration-2 {
       top: 44px;
       width: 100%;
     }
     .container-illustration {
-      height: 396px;
+      @include tablet {
+        height: 396px;
+      }
       .illustration-3 {
         &.zoom {
           object-position: 0 25%;
@@ -44,10 +48,9 @@
     }
     .illustration-4 {
       &.zoom {
-        height: 360px;
-        object-position: 0 45%;
-        @include phone {
-          height: 394px;
+        @include tablet {
+          height: 360px;
+          object-position: 0 45%;
         }
       }
     }

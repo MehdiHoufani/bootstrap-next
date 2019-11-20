@@ -1,6 +1,7 @@
 .page-promoteurs {
   background-color: white;
-  margin-bottom: 68px;
+  height: 100%;
+  overflow-y: scroll;
   .illustration-1 {
     .container-illustration {
       height: 300px;
